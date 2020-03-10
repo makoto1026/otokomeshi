@@ -1,9 +1,18 @@
-.top-wrapper
-  .top-left
-    .top-left--title
-      タイトル
-  .top-right
-    .top-right__form
-      ログインフォーム
-    .top-right__btn
-      新規登録
+.header
+  =render partial: "layouts/header"
+
+.main
+  .main__left
+    .main__left--head
+      .main__left--head--text
+        テキスト
+    .main__left--groups
+      .main__left--groups--lists
+      .main__left--groups--lists
+      .main__left--groups--lists
+  .main__right
+    .main__right--text
+    .main__right--search
+
+.footer
+  = render partial: "layouts/footer"
