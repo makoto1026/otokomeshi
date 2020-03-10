@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "posts#index"
+  root "posts#home"
 
   get 'posts/index'
 end
