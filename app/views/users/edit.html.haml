@@ -1,0 +1,31 @@
+.header
+  =render partial: "layouts/header"
+
+.mypage__head
+  .mypage__head--left
+    マイページ編集
+  .mypage__head--right
+    マイレシピ一覧
+.mypage__main
+  .mypage__main--left
+    = form_for(current_user) do |f|
+      .field
+        .field-label
+          = f.label :name
+        .field-input
+          = f.text_field :name, autofocus: true
+      .field
+        .field-label
+          = f.label :email
+        .field-input
+          = f.email_field :email
+      .actions
+        = f.submit "更新する", class: 'btn'
+    = link_to "トップページに戻る", :back, class: 'btn'
+  .mypage__main--right
+    .mypage__main--right--groups
+      .mypage__main--right--groups--list
+      .mypage__main--right--groups--list
+      .mypage__main--right--groups--list
+.footer
+  = render partial: "layouts/footer"

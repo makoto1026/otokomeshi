@@ -1,0 +1,39 @@
+.mypage__head {
+  height: 80px;
+  background-color: blue;
+  display: flex;
+  align-items: center;
+  &--left {
+    width: 50%;
+    text-align: center;
+  }
+  &--right {
+    width: 50%;
+    text-align: center;
+  }
+}
+
+.mypage__main {
+  height: calc(100vh - 190px);
+  background-color: gray;
+  display: flex;
+  &--left {
+    width: 50%;
+    padding: 30px 60px;
+  }
+  &--right {
+    width: 50%;
+    &--groups {
+      height: calc(100vh - 190px); 
+      padding: 20px 60px 0;
+      background-color: green;
+      overflow: auto;
+      &--list {
+        height: 270px;
+        margin-bottom: 20px;
+        background-color: white;
+        border: 1px solid black;
+      }
+    } 
+  }
+}
