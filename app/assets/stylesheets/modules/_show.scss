@@ -1,12 +1,10 @@
 .result__head {
   height: 90px;
-  background-color: black;
   display: flex;
   &--left {
     width: 60%;
     line-height: 90px;
     font-size: 40px;
-    color: white;
     text-align: center;
   }
   &--right {
@@ -16,27 +14,40 @@
     &--search {
       height: 30px;
       width: 60%;
-      background-color: white;
+      border: 1px solid black;
     }
     &--btn {
       height: 30px;
       width: 40px;
-      background-color: white;
       margin-left:20px;
+      border: 1px solid black;
     }
   }
 }
 
 .result__groups {
   height: calc(100vh - 200px);
-  background-color: burlywood;
   overflow: auto;
   padding: 20px 60px 0;
   &--lists {
     height: 270px;
     margin-bottom: 20px;
-    background-color: white;
+    padding: 10px 30px;
     border: 1px solid black;
+    display: flex;
+    border: 1px solid black;
+    &--image {
+      width: 40%;
+      border: 1px solid $black;
+    }
+    &--textBox {
+      width: 60%;
+      margin-left: 30px;
+      font-size:20px;
+      &--text {
+        margin-bottom: 10px;
+      }
+    }
   }
 }
 
