@@ -3,13 +3,27 @@
   display: flex;
   &--left {
     width: 40%;
-    padding: 30px 60px;
+    padding: 30px 40px;
     text-align: center;
-    .field {
-      margin-top: 30px;
-      font-size: 20px;
-      text-align: left;
+    .edit_user {
+      height: 100%;
+      align-items: center;
     }
+    &--form {
+      height: 40px;
+      width: 80%;
+      margin-top: 50px;
+      font-size: 20px;
+    }
+    &--btn {
+      margin-top: 50px;
+      padding: 18px 35px;
+      text-decoration: none;
+      background-color: thistle;
+      color: $black;
+      margin-left: 10px;
+    }
+
   }
   &--right {
     width: 60%;
@@ -24,11 +38,10 @@
         height: 270px;
         margin-bottom: 20px;
         padding: 20px 40px;
-        border: 1px solid black;
         display: flex;
         font-size: 15px;
-        &--image {
-          width: 40%;
+        .img {
+          border-radius: 20px;
         }
         &--textBox {
           width: 60%;
@@ -52,13 +65,74 @@
   height: 100vh;
   align-items: center;
   &__main {
-    height: calc(100vh - 180px);
+    height: calc(100vh - 360px);
     text-align: center;
-
   }
   &__bottom {
-    height: 180px;
+    height: 360px;
     width: 100%;
-    background-color: lightgray;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    .new_user {
+      height: 360px;
+      width: 100vw;
+      display: inline-block;
+    }
+    .input {
+      height: 50px;
+      width: 40%;
+      margin: 15px 0;
+      border: 1px solid $black;
+    }
+    .login_btn {
+      padding: 20px 50px;
+      background-color: skyblue;
+      margin: 20px 0;
+    }
+    .sign_up {
+      padding: 24.5px 50px;
+      text-decoration: none;
+      background-color: thistle;
+      color: $black;
+      margin-left: 10px;
+    }
+  }
+}
+
+.sign_up-wrapper {
+  height: 100vh;
+  display: flex;
+  &__left {
+    width: 60%;
+    text-align: center;
+  }
+  &__right {
+    width: 40%;
+    align-items: center;
+    text-align: center;
+    .new_user {
+      height: 100vh;
+      width: 100%;
+      margin: 30% 0;
+    }
+    .form {
+      height: 50px;
+      width: 80%;
+      margin: 15px 0;
+      border: 1px solid $black;
+    }
+    .sign_up-btn {
+      padding: 20px 35px;
+      background-color: skyblue;
+      margin: 20px 0;
+    }
+    .sign_in {
+      padding: 24.5px 35px;
+      text-decoration: none;
+      background-color: thistle;
+      color: $black;
+      margin-left: 10px;
+    }
   }
 }
