@@ -5,14 +5,14 @@
 @import "modules/header";
 @import "modules/footer";
 @import "modules/index";
-@import "modules/home";
-@import "modules/search";
-@import "modules/post";
+@import "modules/show";
+@import "modules/new";
 @import "modules/user";
 @import "modules/flash";
 
 * {
   box-sizing: border-box;
+  font-feature-settings: "palt";
 }
 
 .wrapper {
