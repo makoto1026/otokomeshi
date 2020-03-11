@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @posts = Post.all
   end
 
   def update

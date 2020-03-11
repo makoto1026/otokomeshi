@@ -5,6 +5,21 @@
   .main__left
     .main__left--groups
       .main__left--groups--lists
+        -@posts.each do |post| 
+          .main__left--groups--lists--image
+            = image_tag src= post.image, width: "300", class: "img"
+          .main__left--groups--lists--textBox
+            .main__left--groups--lists--textBox--text
+            ⌘ 投稿者  ：  
+            = post.user.name
+            .main__left--groups--lists--textBox--text
+            ⌘ タイトル：  
+            = post.title
+            .main__left--groups--lists--textBox--text
+            ⌘ 作り方  ：
+            = simple_format(post.body)
+
+
       .main__left--groups--lists
       .main__left--groups--lists
   .main__right
