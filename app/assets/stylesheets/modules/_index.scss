@@ -1,22 +1,13 @@
 .main {
+  background-color: burlywood;
   display: flex;
   &__left {
-    height: calc(100vh - 110px);
+    // height: calc(100vh - 110px);
     width: 70%;
-    &--head {
-      height: 80px;
-      background-color: black;
-      text-align: center;
-      &--text {
-        font-size: 20px;
-        line-height: 80px;
-        color: white;
-      }
-    }
     &--groups {
-      height: calc(100vh - 190px); 
-      padding: 20px 60px 0;
-      background-color: green;
+      height: calc(100vh - 110px); 
+      padding: 40px 60px 0;
+      background-color: $white;
       overflow: auto;
       &--lists {
         height: 270px;
@@ -29,16 +20,18 @@
    &__right {
      height: calc(100vh - 110px);
      width: 30%;
-     background-color: skyblue;
+     background-color: $white;
      padding: 100px 40px;
      &--text {
        height: 100px;
        background-color: white;
+       border: 1px solid $black;
        margin-bottom: 30px;
      }
      &--search {
        height: 300px;
        background-color: white; 
+       border: 1px solid $black;
      }
    }
 }

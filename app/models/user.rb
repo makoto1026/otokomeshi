@@ -4,5 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-validates :name, presence: true, uniqueness: true
+  has_many :posts
+  has_many :comments
+
+  validates :name,  presence: true, uniqueness: true
+  validates :email, presence: true, uniqueness: true
 end
