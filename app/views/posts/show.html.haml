@@ -9,22 +9,19 @@
     .result__head--right--btn
       送信
 .result__groups
-  .result__groups--lists
-    -@posts.each do |post| 
+  -@posts.each do |post| 
+    .result__groups--lists
       .result__groups--lists--image
-        = image_tag src= post.image
+        = image_tag src= post.image,  height: "250", width: "250", class: "img"
       .result__groups--lists--textBox
-        .result__groups--lists-textBox--text
-        ⌘ 投稿者  ：  
+        .result__groups--lists--textBox--text
+        投稿者  ：  
         = post.user.name
         .result__groups--lists--textBox--text
-        ⌘ タイトル：  
+        タイトル：  
         = post.title
         .result__groups--lists--textBox--text
-        ⌘ 作り方  ：
+        作り方  ：
         = simple_format(post.body)
-
-  .result__groups--lists
-  .result__groups--lists
 .footer
   = render partial: "layouts/footer"

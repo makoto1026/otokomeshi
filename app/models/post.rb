@@ -3,6 +3,8 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many   :comments
 
-  validates :title, presence: :true
-  validates :body , presence: :true
+  validates :title, :body, :material, presence: :true
+
+
+  mount_uploader :image, ImagesUploader
 end

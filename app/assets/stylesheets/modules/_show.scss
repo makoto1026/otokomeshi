@@ -33,12 +33,9 @@
     height: 270px;
     margin-bottom: 20px;
     padding: 10px 30px;
-    border: 1px solid black;
     display: flex;
-    border: 1px solid black;
-    &--image {
-      width: 40%;
-      border: 1px solid $black;
+    .img {
+      border-radius: 20px;
     }
     &--textBox {
       width: 60%;

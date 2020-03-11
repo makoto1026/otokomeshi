@@ -1,21 +1,12 @@
 .top-wrapper
   .top-wrapper__main
-    = image_tag src = "log.png", width: "600"
+    = image_tag src = "logo.png", width: "600"
   .top-wrapper__bottom
-    %h2 Log in
-    %h5 登録しているユーザーでログイン
-    = render "devise/shared/links"
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-      .field
-        .field-label
-          = f.label :email
-        .field-input
-          = f.email_field :email, autofocus: true
-        .field
-          .field-label
-            = f.label :password
-            %i (英数字8文字以上)
-          .field-input
-            = f.password_field :password, autocomplete: "off"
-        .actions
-          = f.submit "Log in", class: 'btn'
+      .top-wrapper__bottom--input
+        = f.email_field :email, autofocus: true, class: "input", placeholder: "　メールアドレスを入力するんだ"
+      .top-wrapper__bottom--input
+        = f.password_field :password, autocomplete: "off", class: "input", placeholder: "　パスワードを入力するんだ（英数字８文字以上）"
+      .top-wrapper__bottom--input
+        = f.submit "押忍！（ログイン）", class: 'login_btn' 
+        = render "devise/shared/links"

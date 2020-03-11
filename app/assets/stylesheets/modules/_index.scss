@@ -1,9 +1,9 @@
 .main {
   display: flex;
   &__left {
-    // height: calc(100vh - 110px);
     width: 70%;
     &--groups {
+      margin-top: 10px;
       height: calc(100vh - 110px); 
       padding: 40px 60px 0;
       background-color: $white;
