@@ -1,0 +1,20 @@
+.show-main {
+  height: calc(100vh - 110px);
+  background-color: $beju;
+  padding: 60px 150px;
+  display: flex;
+  &__left {
+    width: 60%;
+    text-align: center;
+    img{
+      border-radius: 20px;
+    }
+  }
+  &__right {
+    width: 40%;
+    &--form {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+  }
+}

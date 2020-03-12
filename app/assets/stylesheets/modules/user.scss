@@ -2,9 +2,10 @@
   height: calc(100vh - 110px);
   display: flex;
   background-color: $beju;
+  padding: 0 150px;
   &--left {
     width: 40%;
-    padding: 30px 40px;
+    padding: 60px 40px;
     text-align: center;
     .edit_user {
       height: 100%;
@@ -12,42 +13,48 @@
     }
     &--form {
       height: 40px;
-      width: 80%;
+      width: 100%;
+      padding-left: 10px;
       margin-top: 50px;
-      font-size: 20px;
+      font-size: 15px;
     }
     &--btn {
       margin-top: 50px;
-      padding: 18px 35px;
+      padding: 18px 70px;
       text-decoration: none;
-      background-color: thistle;
-      color: $black;
+      background-color: $orange;
+      color: white;
+      font-weight: bold;
+      border-radius: 50px;
+      border: 0 solid;
       margin-left: 10px;
     }
 
   }
   &--right {
     width: 60%;
-    padding: 30px 30px;
+    padding: 60px 0;
     text-align: center;
     overflow: auto;
     &--groups {
       height: calc(100vh - 110px); 
-      padding: 20px 60px 0;
       text-align: left;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding: 10px 0 0 10px;
       &--list {
         height: 270px;
-        margin-bottom: 20px;
-        padding: 20px 40px;
-        display: flex;
-        font-size: 15px;
+        margin: 30px 0;
+        padding: 10px;
+        font-size: 18px;
+        font-weight: bold;
         .img {
-          border-radius: 20px;
+          border-radius: 10px;
         }
         &--textBox {
-          width: 60%;
           &--text {
-            margin-bottom: 10px;
+            margin-bottom: 5px;
           }
         }
       }

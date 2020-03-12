@@ -6,9 +6,9 @@
       =f.text_field :title, class: "post-wrapper__left--title", placeholder: " タイトルを入力してください"
       =f.text_area :material, class: "post-wrapper__left--materials", placeholder: " 材料を入力してください"
       =f.text_area :body, class: "post-wrapper__left--recipe", placeholder: " レシピを入力してください"
-      = f.file_field :image, class: "post-wrapper__left--file"     
+      = f.file_field :image, class: "post-wrapper__left--file"
+      = f.submit 'プレビュー', class: 'post-wrapper__left--preview'      
       = f.submit '送信', class: 'post-wrapper__left--submit' 
   .post-wrapper__right
-    .post-wrapper__right--btn
 .footer
   = render partial: "layouts/footer"
