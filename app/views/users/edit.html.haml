@@ -14,16 +14,10 @@
       -@posts.each do |post| 
         .mypage__main--right--groups--list
           .mypage__main--right--groups--list--image
-            = image_tag src= post.image, height: "250", width: "200", class: "img"
-          .result__groups--lists--textBox
-            .mypage__main--right--groups--list-textBox--text
-            投稿者  ：    
-            = post.user.name
-            .mypage__main--right--groups--list--textBox--text
-            タイトル：
-            = post.title
-            .mypage__main--right--groups--list--textBox--text
-            レシピ  ：
-            = simple_format(post.body)
+            = image_tag src= post.image, height: "230", width: "200", class: "img"
+            .mypage__main--right--groups--list--textBox
+              .mypage__main--right--groups--list--textBox--text
+              = post.title
+
 .footer
   = render partial: "layouts/footer"

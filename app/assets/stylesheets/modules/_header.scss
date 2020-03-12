@@ -1,14 +1,13 @@
 .header {
   height: 70px;
   background-color: #FCAA01;
-  // border-bottom: 1px solid $black;
   filter: drop-shadow(3px 8px 3px #757575);
   display: flex;
   &__left {
     width: 70%;
     display: flex;
     align-items: center;
-    overflow: auto;
+    overflow: hidden;
     &--logo {
       margin: 10px 60px 0;
       align-items: center;
@@ -24,7 +23,7 @@
     align-items: center;
     &--list {
       font-size: 15px;
-      color: $black;
+      color: black;
       text-decoration: none;
       margin: 0 0 0 auto;
     }

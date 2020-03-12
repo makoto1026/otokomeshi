@@ -9,22 +9,23 @@
       height: calc(100vh - 110px); 
       padding: 40px 0;
       overflow: auto;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding: 10px 0 0 10px;
       &--lists {
         height: 270px;
-        margin-bottom: 20px;
-        display: flex;
-        &--image {
-          width: 40%;
-          text-align: center;
-          margin-top: 15px;
-        }
+        margin: 30px 0;
+        padding: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: left;
         .img {
-          border-radius: 20px;
+          border-radius: 10px;
         }
         &--textBox {
-          width: 60%;
           &--text {
-            margin-bottom: 10px;
+            margin-bottom: 5px;
           }
         }
       }
@@ -33,17 +34,44 @@
    &__right {
      height: calc(100vh - 110px);
      width: 40%;
-     padding: 100px 40px;
-     &--text {
-       height: 100px;
+     padding: 60px 40px;
+     text-align: center;
+     &--searchbox {
+       height: 30px;
+       width: 70%;
+       font-size: 15px;
+       padding-left: 10px;
        background-color: white;
        border: 1px solid $black;
-       margin-bottom: 30px;
+       margin: 30px 0;
      }
-     &--kategoli {
-       height: 300px;
-       background-color: white; 
-       border: 1px solid $black;
+     &--btn {
+       width: 80px;
+       margin: 10px;     
+     }
+     &--kategories {
+       height: 500px;
+       padding: 0 30px;
+       &--text {
+         text-align: center;
+         margin-bottom: 30px;
+       }
+       &--lists {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        &--tag {
+          height: 40px;
+          width: 30%;
+          line-height: 40px;
+          font-size: 13px;
+          color: white;
+          font-weight: bold;
+          background-color: #757575;
+          margin: 5px;
+          border-radius: 10px;
+        }
+       }
      }
    }
 }

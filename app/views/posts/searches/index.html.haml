@@ -1,27 +1,13 @@
 .header
   = render partial: "layouts/header"
-.result__head
-  .result__head--left
-    検 索 結 果 一 覧
-  .result__head--right
-    .result__head--right--search
-      検索する
-    .result__head--right--btn
-      送信
-.result__groups
-  -@posts.each do |post| 
-    .result__groups--lists
-      .result__groups--lists--image
-        = image_tag src= post.image,  height: "250", width: "250", class: "img"
-      .result__groups--lists--textBox
-        .result__groups--lists--textBox--text
-        投稿者  ：  
-        = post.user.name
-        .result__groups--lists--textBox--text
-        タイトル：  
+
+.main 
+  -@posts.each do |post|
+    .main__groups
+      .main__groups--image
+        = image_tag src= post.image, height: "230", width: "200", class: "img"
+        .main__groups--text 
         = post.title
-        .result__groups--lists--textBox--text
-        レシピ  ：
-        = simple_format(post.body)
+
 .footer
   = render partial: "layouts/footer"

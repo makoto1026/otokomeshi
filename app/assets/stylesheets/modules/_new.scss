@@ -11,7 +11,7 @@
       height: 50px;
       width: 80%;
       padding: 20px 0;
-      margin-bottom: 20px;
+      margin: 30px 0 20px 0;
     }
     &--materials {
       height: 150px;
@@ -24,29 +24,29 @@
       margin-bottom: 20px;
     }
     &--file {
-      padding: 18px 35px;
+      width: 350px;
       text-decoration: none;
-      background-color: skyblue;
-      color: $black;
-      margin-left: 10px;
+      font-weight: bold;
     } 
+    &--preview {
+      padding: 18px 50px;
+      text-decoration: none;
+      background-color: #61C359;
+      color: white;
+      font-weight: bold;
+      border-radius: 50px;
+      border: 0 solid;
+      margin-left: 10px;
+    }
     &--submit {
       padding: 18px 35px;
       text-decoration: none;
-      background-color: thistle;
-      color: $black;
+      background-color: #FCAA01;
+      color: white;
+      font-weight: bold;
+      border-radius: 50px;
+      border: 0 solid;
       margin-left: 10px;
-    }
-  }
-  &__right {
-    width: 30%;
-    padding: 30px 30px 30px 20px;
-    display: flex;
-    align-items: center;
-    &--btn {
-      height: 200px;
-      width: 100%;
-      border: 1px solid black;
     }
   }
 }
