@@ -1,5 +1,9 @@
 class PostsController < ApplicationController
+
+  before_action :move_to_index, except: [:index, :show, :search]
+
   def index
+    # binding.pry
     @posts = Post.all
   end
 
@@ -18,10 +22,19 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def search
+    @posts = Post.search(params[:keyword])
+    # render = search_posts_path
+  end
+
   private
 
   def post_params
     params.require(:post).permit(:title, :body, :image, :material).merge(user_id: current_user.id)
+  end
+
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
   end
 
   

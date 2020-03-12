@@ -1,12 +1,12 @@
 .top-wrapper
   .top-wrapper__main
-    = image_tag src = "logo.png", width: "600"
+    = image_tag src = "男飯 (1).png", width: "600"
   .top-wrapper__bottom
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       .top-wrapper__bottom--input
-        = f.email_field :email, autofocus: true, class: "input", placeholder: "　メールアドレスを入力するんだ"
+        = f.email_field :email, autofocus: true, class: "input", placeholder: "　メールアドレス"
       .top-wrapper__bottom--input
-        = f.password_field :password, autocomplete: "off", class: "input", placeholder: "　パスワードを入力するんだ（英数字８文字以上）"
+        = f.password_field :password, autocomplete: "off", class: "input", placeholder: "　パスワード（英数字８文字以上）"
       .top-wrapper__bottom--input
-        = f.submit "押忍！（ログイン）", class: 'login_btn' 
+        = f.submit "ログイン", class: 'login_btn' 
         = render "devise/shared/links"

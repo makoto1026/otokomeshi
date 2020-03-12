@@ -1,11 +1,11 @@
 .header__left
   .header__left--logo
-    = link_to image_tag("logo.png", width: "150"), posts_path
+    = link_to image_tag("logo2.png", width: "150"), posts_path
   .header__left--text
-    駆け出しエンジニアによる駆け出しエンジニアのためのエンジニア飯募集中!!
+    駆け出しエンジニアによる駆け出しエンジニアのためのエンジニア飯募集中!
 .header__right
   = link_to edit_user_path(current_user), class: "header__right--list" do
-    = "俺のページ"
+    = "マイページ"
   = link_to new_post_path, class: "header__right--list" do
     = "投稿する"
   = link_to destroy_user_session_path, method: :delete, class: "header__right--list" do

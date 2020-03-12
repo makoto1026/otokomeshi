@@ -1,6 +1,7 @@
 .mypage__main {
   height: calc(100vh - 110px);
   display: flex;
+  background-color: $beju;
   &--left {
     width: 40%;
     padding: 30px 40px;
@@ -64,6 +65,7 @@
 .top-wrapper {
   height: 100vh;
   align-items: center;
+  background-color: $beju;
   &__main {
     height: calc(100vh - 360px);
     text-align: center;
@@ -83,19 +85,28 @@
       height: 50px;
       width: 40%;
       margin: 15px 0;
-      border: 1px solid $black;
+      background-color: $beju;
+      border:0 solid;
+      border-bottom: 1px solid lightgray;
+      text-align: center;
     }
     .login_btn {
-      padding: 20px 50px;
-      background-color: skyblue;
+      padding: 20px 100px;
+      background-color: $orange;
       margin: 20px 0;
+      color: white;
+      font-weight: bold;
+      border-radius: 50px;
+      border: 0 solid;
     }
     .sign_up {
-      padding: 24.5px 50px;
+      padding: 24.5px 100px;
       text-decoration: none;
-      background-color: thistle;
-      color: $black;
-      margin-left: 10px;
+      background-color: #61C359;
+      color: white;
+      font-weight: bold;
+      margin-left: 40px;
+      border-radius: 50px;
     }
   }
 }
@@ -103,6 +114,7 @@
 .sign_up-wrapper {
   height: 100vh;
   display: flex;
+  background-color: $orange;
   &__left {
     width: 60%;
     text-align: center;
@@ -111,28 +123,44 @@
     width: 40%;
     align-items: center;
     text-align: center;
+    input::placeholder {
+      color: white;
+      font-weight: bold;
+    }
     .new_user {
-      height: 100vh;
       width: 100%;
       margin: 30% 0;
     }
     .form {
       height: 50px;
-      width: 80%;
-      margin: 15px 0;
-      border: 1px solid $black;
+      width: 70%;
+      margin: 15px 30px 15px 0;
+      background-color: $orange;
+      border:0 solid;
+      border-bottom: 2px solid white;
+      text-align: center;
+      color: white;
+      font-weight: bold;
     }
     .sign_up-btn {
-      padding: 20px 35px;
-      background-color: skyblue;
+      padding: 20px 50px;
+      background-color: #61C359;
       margin: 20px 0;
+      color: white;
+      font-weight: bold;
+      border-radius: 50px;
+      border: 0 solid;
     }
     .sign_in {
-      padding: 24.5px 35px;
+      padding: 24px 70px;
       text-decoration: none;
-      background-color: thistle;
+      background-color: #FAFAFA;
       color: $black;
-      margin-left: 10px;
+      margin: 0 30px 0 5px;
+      color: #FCAA01;
+      font-weight: bold;
+      border-radius: 50px;
+      border: 0 solid;
     }
   }
 }

@@ -16,11 +16,12 @@
             タイトル：  
             = post.title
             .main__left--groups--lists--textBox--text
-            作り方  ：
+            レシピ  ：
             = simple_format(post.body)
   .main__right
-    .main__right--text
-    .main__right--search
+    = form_for search_posts_path, local: true, method: :get, class: "main__right--searchBox" do |f|
+      =f.text_field :keyword, placeholder: "キーワード検索", class: "main__right--searchBox--text"
+      =f.submit "検索", class: "main__right--searchBox--btn"
 
 .footer
   = render partial: "layouts/footer"
