@@ -19,7 +19,7 @@
             レシピ  ：
             = simple_format(post.body)
   .main__right
-    = form_for search_posts_path, local: true, method: :get, class: "main__right--searchBox" do |f|
+    = form_for posts_searches_path, local: true, method: :get, class: "main__right--searchBox" do |f|
       =f.text_field :keyword, placeholder: "キーワード検索", class: "main__right--searchBox--text"
       =f.submit "検索", class: "main__right--searchBox--btn"
 

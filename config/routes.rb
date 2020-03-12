@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
-  root "posts#index"
   devise_for :users
-  resources :users,    only: [:edit, :update]
-  resources :posts do
-    collection do
-      get 'search'
-    end
+  namespace :posts do 
+    resources :searches, only: :index
   end
+  root "posts#index"
+  resources :users,    only: [:edit, :update]
+  resources :posts 
   resources :comments, only: :create 
 end

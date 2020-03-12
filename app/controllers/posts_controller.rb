@@ -3,7 +3,6 @@ class PostsController < ApplicationController
   before_action :move_to_index, except: [:index, :show, :search]
 
   def index
-    # binding.pry
     @posts = Post.all
   end
 
@@ -19,13 +18,12 @@ class PostsController < ApplicationController
   end
 
   def show
-    @posts = Post.all
   end
 
-  def search
-    @posts = Post.search(params[:keyword])
-    # render = search_posts_path
-  end
+  # def search
+  #   @posts = Post.search(params[:keyword])
+  #   redirect_to search_posts_path
+  # end
 
   private
 
