@@ -1,12 +1,13 @@
 .main {
   display: flex;
+  background-color: $beju;
+  padding: 0 150px;
   &__left {
-    width: 70%;
+    width: 60%;
     &--groups {
       margin-top: 10px;
       height: calc(100vh - 110px); 
-      padding: 40px 60px 0;
-      background-color: $white;
+      padding: 40px 0;
       overflow: auto;
       &--lists {
         height: 270px;
@@ -31,8 +32,7 @@
   }
    &__right {
      height: calc(100vh - 110px);
-     width: 30%;
-     background-color: $white;
+     width: 40%;
      padding: 100px 40px;
      &--text {
        height: 100px;
@@ -40,7 +40,7 @@
        border: 1px solid $black;
        margin-bottom: 30px;
      }
-     &--search {
+     &--kategoli {
        height: 300px;
        background-color: white; 
        border: 1px solid $black;

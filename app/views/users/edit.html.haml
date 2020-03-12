@@ -3,13 +3,13 @@
 
 .mypage__main
   .mypage__main--left
-    俺の情報編集
+    ユーザー情報編集
     = form_for(current_user) do |f|
-      = f.text_field :name, autofocus: true, placeholder: " 変更後の名前を入力してくれ！", class: "mypage__main--left--form"
-      = f.email_field :email, placeholder: " 変更後のメールアドレスを入力してくれ！", class: "mypage__main--left--form"
-      = f.submit "更新する!", class: 'mypage__main--left--btn'
+      = f.text_field :name, autofocus: true, placeholder: " ユーザーネーム", class: "mypage__main--left--form"
+      = f.email_field :email, placeholder: " メールアドレス", class: "mypage__main--left--form"
+      = f.submit "更新", class: 'mypage__main--left--btn'
   .mypage__main--right
-    俺のレシピ一覧
+    マイレシピ一覧
     .mypage__main--right--groups
       -@posts.each do |post| 
         .mypage__main--right--groups--list
@@ -23,7 +23,7 @@
             タイトル：
             = post.title
             .mypage__main--right--groups--list--textBox--text
-            作り方  ：
+            レシピ  ：
             = simple_format(post.body)
 .footer
   = render partial: "layouts/footer"

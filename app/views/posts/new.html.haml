@@ -3,11 +3,11 @@
 .post-wrapper
   .post-wrapper__left
     = form_for @post do |f|
-      =f.text_field :title, class: "post-wrapper__left--title", placeholder: " タイトルを入力してくれ"
-      =f.text_area :material, class: "post-wrapper__left--materials", placeholder: " 材料を入力してくれ"
-      =f.text_area :body, class: "post-wrapper__left--recipe", placeholder: " 作り方を入力してくれ"
+      =f.text_field :title, class: "post-wrapper__left--title", placeholder: " タイトルを入力してください"
+      =f.text_area :material, class: "post-wrapper__left--materials", placeholder: " 材料を入力してください"
+      =f.text_area :body, class: "post-wrapper__left--recipe", placeholder: " レシピを入力してください"
       = f.file_field :image, class: "post-wrapper__left--file"     
-      = f.submit 'Send', class: 'post-wrapper__left--submit' 
+      = f.submit '送信', class: 'post-wrapper__left--submit' 
   .post-wrapper__right
     .post-wrapper__right--btn
 .footer

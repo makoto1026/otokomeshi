@@ -1,8 +1,8 @@
 .header {
   height: 70px;
-  background-color: $white;
+  background-color: #FCAA01;
   // border-bottom: 1px solid $black;
-  filter: drop-shadow(3px 3px 3px rgba(100,100,100,0.6));
+  filter: drop-shadow(3px 8px 3px #757575);
   display: flex;
   &__left {
     width: 70%;
