@@ -8,13 +8,42 @@
     text-align: center;
     img{
       border-radius: 20px;
+      margin-bottom: 30px;
+    }
+    &--iine {
+      height: 40px;
+      width: 160px;
+      background-color: $orange;
+      font-weight: bold;
+      border-radius: 50px;
+      margin: 0 auto;
+      line-height: 40px;
+      font-size: 15px;
     }
   }
   &__right {
-    width: 40%;
+    width: 50%;
     &--form {
-      font-size: 30px;
-      margin-bottom: 20px;
+    font-size: 30px;
+    margin-bottom: 20px;
     }
   }
+}
+a {
+  text-decoration: none;
+}
+.fas {
+  color: white;
+}
+#id_iine-text {
+  color: white;
+}
+#id_iine-text2 {
+  color: white;
+}
+#id_likes-count {
+  color: $orange;
+  background-color: $white;
+  padding: 5px 8px;
+  border-radius: 100em;
 }
