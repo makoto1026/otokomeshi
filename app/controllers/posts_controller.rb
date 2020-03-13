@@ -8,7 +8,6 @@ class PostsController < ApplicationController
 
   def create
     Post.create(post_params)
-    redirect_to root_path
   end
 
   def edit
@@ -20,13 +19,12 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(15)
+    @post = Post.find(params[:id])
   end
 
-  # def search
-  #   @posts = Post.search(params[:keyword])
-  #   redirect_to search_posts_path
-  # end
+  def search
+    @posts = Post.search(params[:keyword])
+  end
 
   private
 

@@ -3,21 +3,17 @@
 
 .show-main
   .show-main__left
-    = image_tag src= @post.image, height: "550", width: "490"
-  .show-main__right
-    .show-main__rigth--form
-      投 稿 者 :
-      = @post.user.name
-    .show-main__rigth--form
-      タイトル :
-      = @post.title 
-    .show-main__rigth--form
-      材     料 :
-      = @post.material
-    .show-main__rigth--form
-      レ シ ピ :
-      = @post.body
-    .show-main__rigth--manage
-      =link_to edit_post_path(@post.id), "編集", class: "manage-edit"
+    .show-main__left--groups
+      .show-main__left--groups--image
+        = image_tag src= @post.image, height: "550", width: "490"
+      .show-main__rigth--groups--form
+        = @post.user.name
+      .show-main__rigth--groups--form
+        = @post.title 
+      .show-main__rigth--groups--form
+        = @post.material
+      .show-main__rigth--groups--form
+        = @post.body
+  .show-main__rigth--manage
 .footer
   = render partial: "layouts/footer"
