@@ -1,12 +1,13 @@
-.header__left
-  .header__left--logo
-    = link_to image_tag("logo2.png", width: "150"), posts_path
-  .header__left--text
-    駆け出しエンジニアによる駆け出しエンジニアのためのエンジニア飯募集中!
-.header__right
-  = link_to edit_user_path(current_user), class: "header__right--list" do
+.header__logo
+  = link_to image_tag("logo2.png", width: "90"), posts_path
+.header__nav
+  .header__nav__buns
+  .header__nav__patty
+  .header__nav__buns
+.header__lists
+  = link_to edit_user_path(current_user), class: "header__lists--list" do
     = "マイページ"
-  = link_to new_post_path, class: "header__right--list" do
+  = link_to new_post_path, class: "header__lists--list" do
     = "投稿する"
-  = link_to destroy_user_session_path, method: :delete, class: "header__right--list" do
+  = link_to destroy_user_session_path, method: :delete, class: "header__lists--list" do
     = "ログアウト"
