@@ -3,17 +3,25 @@
 
 .show-main
   .show-main__left
-    .show-main__left--groups
-      .show-main__left--groups--image
-        = image_tag src= @post.image, height: "550", width: "490"
-      .show-main__rigth--groups--form
-        = @post.user.name
-      .show-main__rigth--groups--form
-        = @post.title 
-      .show-main__rigth--groups--form
-        = @post.material
-      .show-main__rigth--groups--form
-        = @post.body
+    .show-main__left--image
+      = image_tag src= @post.image, height: "400", width: "340"
+    .show-main__left--iine
+      = render partial: 'likes/like', locals: { post: @post, posts: @posts, likes: @likes, like: @like}
+  .show-main__right
+    .show-main__rigth--form
+      投稿者 :  
+      = @post.user.name
+    .show-main__rigth--form
+      タイトル :
+      = @post.title 
+    .show-main__rigth--form
+      材料 :
+      = @post.material
+    .show-main__rigth--form
+      レシピ :
+      = @post.body
   .show-main__rigth--manage
+
+
 .footer
   = render partial: "layouts/footer"
