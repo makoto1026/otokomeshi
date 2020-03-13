@@ -14,7 +14,7 @@
       -@posts.each do |post| 
         .mypage__main--right--groups--list
           .mypage__main--right--groups--list--image
-            = image_tag src= post.image, height: "230", width: "200", class: "img"
+            = link_to image_tag(post.image, height: "230", width: "200", class: "img"), post_path(post.id)
             .mypage__main--right--groups--list--textBox
               .mypage__main--right--groups--list--textBox--text
               = post.title

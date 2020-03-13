@@ -7,14 +7,14 @@
       -@posts.each do |post| 
         .main__left--groups--lists
           .main__left--groups--lists--image
-            = image_tag src= post.image, height: "230", width: "200", class: "img"
+            = link_to image_tag(post.image, height: "230", width: "200", class: "img"), post_path(post.id), class: "img"
           .main__left--groups--lists--textBox
           .main__left--groups--lists--textBox--text
             .main__left--groups--lists--textBox--text  
             = post.title
   .main__right
     レシピ検索
-    = form_for posts_searches_path, local: true, method: :get do |f|
+    = form_for search_posts_path, method: :get do |f|
       =f.text_field :keyword, placeholder: "キーワード検索", class: "main__right--searchbox"
       =f.submit "検索", class: "main__right--btn"
     .main__right--kategories
@@ -34,10 +34,6 @@
         .main__right--kategories--lists--tag
           ちょい手間
         
-
-
-
-
 .footer
   = render partial: "layouts/footer"
 
