@@ -4,10 +4,11 @@ class PostsController < ApplicationController
 
   def index
     if params[:keyword]
-      @posts = Post.where('title LIKE ?', "%#{params[:keyword]}%")
+      @posts = Post.where('IKE ?', "%#{params[:keyword]}%")
     else
       @posts = Post.all
     end
+    #@posts = Post.all
   end
 
   def create
