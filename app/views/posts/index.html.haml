@@ -14,9 +14,10 @@
             = post.title
   .main__right
     レシピ検索
-    = form_for search_posts_path, method: :get do |f|
-      =f.text_field :keyword, placeholder: "キーワード検索", class: "main__right--searchbox"
-      =f.submit "検索", class: "main__right--btn"
+    = form_tag('/posts/search', method: 'get') do
+      = label_tag(:keyword, '検索')
+      = text_field_tag(:keyword)
+      = submit_tag('Search')
     .main__right--kategories
       .main__right--kategories--text
         カテゴリ一覧

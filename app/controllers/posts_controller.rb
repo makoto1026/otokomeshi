@@ -3,7 +3,11 @@ class PostsController < ApplicationController
   before_action :move_to_index, except: [:index, :show, :search]
 
   def index
-    @posts = Post.all
+    if params[:keyword]
+      @posts = Post.where('title LIKE ?', "%#{params[:keyword]}%")
+    else
+      @posts = Post.all
+    end
   end
 
   def create
@@ -30,7 +34,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body, :image, :material).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :body, :image, :material, :keyword).merge(user_id: current_user.id)
   end
 
   def set_post
