@@ -11,14 +11,16 @@
       margin-bottom: 30px;
     }
     &--iine {
-      height: 40px;
       width: 160px;
-      background-color: $orange;
-      font-weight: bold;
-      border-radius: 50px;
+      background-color: white;
+      color: #55C500;
+      font-weight: 900;
       margin: 0 auto;
+      border: 3px solid #55C500;
       line-height: 40px;
-      font-size: 15px;
+      font-size: 24px;
+      color: #55C500;
+      font-family: system-ui;
     }
   }
   &__right {
@@ -31,19 +33,14 @@
 }
 a {
   text-decoration: none;
+  color: #55C500;
+  font-family: system-ui;
 }
-.fas {
-  color: white;
+.far {
+  color: 55C500;
 }
-#id_iine-text {
-  color: white;
-}
-#id_iine-text2 {
-  color: white;
-}
-#id_likes-count {
-  color: $orange;
-  background-color: $white;
-  padding: 5px 8px;
-  border-radius: 100em;
+
+.iine-count {
+  text-decoration: none;
+
 }
