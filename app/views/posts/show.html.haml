@@ -6,7 +6,7 @@
     .show-main__left--image
       = image_tag src= @post.image, height: "400", width: "340"
     .show-main__left--iine
-      = render partial: 'likes/like', locals: { post: @post, posts: @posts, likes: @likes, like: @like}
+      = render partial: 'likes/like', locals: { post: @post }
   .show-main__right
     .show-main__rigth--form
       投稿者 :  

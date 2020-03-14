@@ -1,24 +1,16 @@
-- if user_signed_in?
-  - if post.like_user(current_user.id)
-    .item-button-container__left__dislike
-      =link_to post_like_path(@post), method: :delete, remote: true do
-        %i.fas.fa-heart
-          %span#iine-text いいね
-          %span#id_iine-text2 ！
-          %span#id_likes-count
-            = post.likes_count
-  - else
-    .item-button-container__left__like
-      =link_to post_likes_path(@post), method: :post, remote: true do
-        %i.fas.fa-heart
-          %span#iine-text いいね
-          %span#id_iine-text2 ！
-          %span#id_likes-count
-            = post.likes_count
--else
-  .item-button-container__left__like
-    %i.fas.fa-heart
-      %span#id_iine-text いいね
-      %span#id_iine-text2 ！
-      %span#id_likes-count
-        = post.like_count
+- if Like.find_by(user_id: current_user.id, post_id: @post.id)
+  .item-button-container__left__dislike
+    =link_to like_path, method: :delete, remote: true do
+      %i.fas.fa-heart
+        %span#iine-text いいね
+        %span#id_iine-text2 ！
+        %span#id_likes-count
+          = post.likes_count
+- else
+  .item-button-container__left
+    =link_to likes_path, method: :post, remote: true do
+      %i.fas.fa-heart
+        %span#iine-text いいね
+        %span#id_iine-text2 ！
+        %span#id_likes-count
+          = post.likes_count
