@@ -1,9 +1,7 @@
 class UsersController < ApplicationController
-  def index
-  end
 
   def edit
-    @posts = Post.all
+    @posts = current_user.posts
   end
 
   def update
@@ -17,7 +15,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email)
+    params.require(:user).permit(:name, :email).merge(user_id: current_user.id)
   end
 end
 
