@@ -1,1 +1,11 @@
-削除しました
+.header
+  = render partial: 'layouts/header'
+
+.main__create
+  .main__create--text
+    投稿しました
+  .main__create--mypage
+    = link_to 'メインページへ戻る', root_path
+
+.footer
+  = render partial: "layouts/footer" 

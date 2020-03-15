@@ -5,7 +5,6 @@
   &__left {
     width: 60%;
     &--groups {
-      margin-top: 10px;
       height: calc(100vh - 110px); 
       padding: 40px 0;
       overflow: auto;
@@ -36,14 +35,21 @@
      width: 40%;
      padding: 60px 40px;
      text-align: center;
-     &--searchbox {
+     form {
        height: 30px;
-       width: 70%;
+       
        font-size: 15px;
        padding-left: 10px;
-       background-color: white;
-       border: 1px solid $black;
-       margin: 30px 0;
+       margin: 30px auto;
+       display: flex;
+     }
+     #keyword {
+      width: 100%;
+      margin-right: 10px;
+     }
+     .search-btn {
+       width: 100px;
+       margin: auto;
      }
      &--btn {
        width: 80px;

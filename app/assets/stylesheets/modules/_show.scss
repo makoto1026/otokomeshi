@@ -4,7 +4,7 @@
   padding: 60px 150px;
   display: flex;
   &__left {
-    width: 60%;
+    width: 50%;
     text-align: center;
     img{
       border-radius: 20px;
@@ -25,9 +25,24 @@
   }
   &__right {
     width: 50%;
-    &--form {
-    font-size: 30px;
-    margin-bottom: 20px;
+    display: flex;
+    &--forms {
+      width: 20%;
+      font-size: 16px;
+      align-items: center;
+      &--name {
+        height: 20px;
+        font-size: 30px;
+        background-color: green;
+      }
+    }
+    &--post {
+      width: 80%;
+      align-items: center;
+      &__name {
+        height: 30px;
+        font-size: 30px;
+      }
     }
   }
 }

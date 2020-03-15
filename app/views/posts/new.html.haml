@@ -1,14 +1,13 @@
 .header
   = render partial: "layouts/header"
 .post-wrapper
-  .post-wrapper__left
+  .post-wrapper__groups
+    .post-wrapper__groups--text 投稿フォーム
     = form_for @post do |f|
-      =f.text_field :title, class: "post-wrapper__left--title", placeholder: " タイトルを入力してください"
-      =f.text_area :material, class: "post-wrapper__left--materials", placeholder: " 材料を入力してください"
-      =f.text_area :body, class: "post-wrapper__left--recipe", placeholder: " レシピを入力してください"
-      = f.file_field :image, class: "post-wrapper__left--file"
-      = f.submit 'プレビュー', class: 'post-wrapper__left--preview'      
-      = f.submit '送信', class: 'post-wrapper__left--submit' 
-  .post-wrapper__right
+      =f.text_field :title, class: "post-wrapper__groups--title", placeholder: " タイトルを入力してください(10文字以内）"
+      =f.text_area :material, class: "post-wrapper__groups--materials", placeholder: " 材料を入力してください"
+      =f.text_area :body, class: "post-wrapper__groups--recipe", placeholder: " レシピを入力してください"
+      = f.file_field :image, class: "post-wrapper__groups--file"
+      = f.submit '送信', class: 'post-wrapper__groups--submit' 
 .footer
   = render partial: "layouts/footer"

@@ -1,3 +1,11 @@
-削除しました
+.header
+  = render partial: 'layouts/header'
 
-=link_to 'メインページへ', root_path
+.main__destroy
+  .main__destroy--text
+    削除しました
+  .main__destroy--mypage
+    = link_to 'マイページへ戻る', edit_user_path(current_user)
+
+.footer
+  = render partial: "layouts/footer" 
