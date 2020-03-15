@@ -1,20 +1,3 @@
--# - if Like.find(user_id: current_user.id, post_id: post.id)
--#   .item-button-container__left__dislike
--#     =link_to like_path(@post), method: :delete, remote: true do
-      
--#         %span#iine-text いいね
--#         %span#id_iine-text2 ！
--#         %span#id_likes-count
--#           = post.likes_count
--# - else
--#   .item-button-container__left
--#     =link_to likes_path(@post), method: :post, remote: true do
--#       %i.fas.fa-heart
--#         %span#iine-text いいね
--#         %span#id_iine-text2 ！
--#         %span#id_likes-count
--#           = post.likes_count
-
 -if current_user.already_liked?(@post)
   =link_to post_like_path(@post), method: :delete do
     LGTM
