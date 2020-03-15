@@ -14,7 +14,7 @@
             = post.title
   .main__right
     レシピ検索
-    = form_tag('/posts/search', method: 'get') do
+    = form_tag('search_posts_path', method: 'get') do
       = label_tag(:keyword, '検索')
       = text_field_tag(:keyword)
       = submit_tag('Search')

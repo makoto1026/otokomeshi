@@ -8,15 +8,20 @@ class PostsController < ApplicationController
     else
       @posts = Post.all
     end
-    #@posts = Post.all
   end
 
   def create
     Post.create(post_params)
+    redirect_to root_path
   end
 
   def edit
     @post = Post.find(params[:id])
+  end
+
+  def destroy
+    post = Post.find(params[:id])
+    post.destroy
   end
 
   def new

@@ -1,3 +1,11 @@
-= form_for @post local: true do |f|
+編集する
+
+= form_for @post do |f|
+  = f.text_field :title, placeholder: "タイトル"
+  = f.text_area :material, placeholder: "材料"
+  = f.text_area :body, placeholder: "レシピ"
+  = f.file_field :image
+  = f.submit "更新"
+
 
   
