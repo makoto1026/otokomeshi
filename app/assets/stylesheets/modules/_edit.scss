@@ -1,22 +1,17 @@
-.post-wrapper {
+.main__edit {
   height: calc(100vh - 110px);
-  width: 100%;
   background-color: $beju;
-  display: flex;
-  &__groups {
+  &--forms {
     width: 100%;    
     align-items: center;
     padding: 30px 400px;
-    &--text {
-      text-align: center;
-    }
     &--title {
       height: 50px;
       width: 100%;
       padding: 20px 0;
       margin: 30px 0;
     }
-    &--materials {
+    &--material {
       height: 150px;
       width: 100%;
       border: 1px solid lightgray;
@@ -28,7 +23,7 @@
       border: 1px solid lightgray;
       margin-bottom: 20px;
     }
-    &--file {
+    &--image {
       width: 350px;
       text-decoration: none;
       font-weight: bold;
@@ -44,9 +39,5 @@
       margin-left: 10px;
       float: right;
     }
-  }
-  &__right {
-    width: 30%;
-    padding: 60px 20px;
   }
 }

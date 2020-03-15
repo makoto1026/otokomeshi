@@ -1,11 +1,17 @@
-編集する
+.header
+  = render partial: "layouts/header"
 
-= form_for @post do |f|
-  = f.text_field :title, placeholder: "タイトル"
-  = f.text_area :material, placeholder: "材料"
-  = f.text_area :body, placeholder: "レシピ"
-  = f.file_field :image
-  = f.submit "更新"
+.main__edit
+  .main__edit--forms
+    = form_for @post do |f|
+      = f.text_field :title, placeholder: "タイトル", class: "main__edit--forms--title"
+      = f.text_area :material, placeholder: "材料", class: "main__edit--forms--material"
+      = f.text_area :body, placeholder: "レシピ", class: "main__edit--forms--recipe"
+      = f.file_field :image, class: "main__edit--forms--image"
+      = f.submit "更新", class: "main__edit--forms--submit"
 
+
+.footer
+  = render partial: "layouts/footer"
 
   
