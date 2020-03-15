@@ -21,6 +21,7 @@
       レシピ :
       = @post.body
   .show-main__rigth--manage
+  -if user_signed_in? && current_user.id == @post.user_id 
     =link_to '編集', edit_post_path(@post.id), method: :get
     =link_to '削除', post_path(@post.id), method: :delete
 

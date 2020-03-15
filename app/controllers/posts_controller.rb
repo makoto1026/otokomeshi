@@ -33,6 +33,11 @@ class PostsController < ApplicationController
     @like = Like.new
   end
 
+  def update
+    post = Post.find(params[:id])
+    post.update(post_params)
+  end
+
   def search
     @posts = Post.search(params[:keyword])
   end
