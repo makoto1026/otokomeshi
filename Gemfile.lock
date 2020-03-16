@@ -40,6 +40,8 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    ancestry (3.0.7)
+      activerecord (>= 3.2.0)
     arel (7.1.4)
     bcrypt (3.1.13)
     bindex (0.8.1)
@@ -212,6 +214,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ancestry (~> 3.0.7)
   byebug
   carrierwave
   coffee-rails (~> 4.2)
