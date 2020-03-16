@@ -6,9 +6,15 @@
   &__left {
     width: 50%;
     text-align: center;
+    position: relative;
     img{
+      height: 400px;
+      width: 340px;
       border-radius: 20px;
       margin-bottom: 30px;
+      object-fit: cover;
+      position: absolute;
+      right: 50px;
     }
     &--iine {
       width: 160px;
@@ -21,6 +27,18 @@
       font-size: 24px;
       color: #55C500;
       font-family: system-ui;
+      position: absolute;
+      top: 430px;
+      right: 140px;
+    }
+    &__manage {
+      position: absolute;
+      top: 500px;
+      left: 300px;
+      .manage-btn {
+        color: red;   
+        margin-left: 10px;
+      }
     }
   }
   &__right {
@@ -30,18 +48,15 @@
       width: 20%;
       font-size: 16px;
       align-items: center;
-      &--name {
-        height: 20px;
-        font-size: 30px;
-        background-color: green;
+      p {
+        margin-bottom: 30px;
       }
     }
-    &--post {
+    &--forms--post {
       width: 80%;
       align-items: center;
-      &__name {
-        height: 30px;
-        font-size: 30px;
+      p {
+        margin-bottom: 30px;
       }
     }
   }

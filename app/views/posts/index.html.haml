@@ -7,13 +7,13 @@
       -@posts.each do |post| 
         .main__left--groups--lists
           .main__left--groups--lists--image
-            = link_to image_tag(post.image, height: "230", width: "200", class: "img"), post_path(post.id), class: "img"
+            = link_to image_tag(post.image, class: "img"), post_path(post.id), class: "img"
           .main__left--groups--lists--textBox
           .main__left--groups--lists--textBox--text
             .main__left--groups--lists--textBox--text  
             = post.title
   .main__right
-    レシピ検索
+    %p レシピ検索
     = form_tag('/posts/search', method: 'get') do
       = text_field_tag(:keyword)
       = submit_tag('検索する', class: "search-btn")

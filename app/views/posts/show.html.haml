@@ -4,31 +4,35 @@
 .show-main
   .show-main__left
     .show-main__left--image
-      = image_tag src= @post.image, height: "400", width: "340"
+      = image_tag src= @post.image
     .show-main__left--iine
       = render partial: 'likes/like', locals: { post: @post }
+    
+    .show-main__left__manage
+      -if user_signed_in? && current_user.id == @post.user_id 
+        =link_to '編集', edit_post_path(@post.id), method: :get, class: "manage-btn"
+        =link_to '削除', post_path(@post.id), method: :delete, class: "manage-btn"
+  
   .show-main__right
     .show-main__right--forms
-      .show-main__rigth--forms--name 投稿者 
+      .show-main__rigth--forms--name 
+        %p 投稿者 
       .show-main__rigth--forms--title
-        タイトル
+        %p タイトル
       .show-main__rigth--forms--material
-        材料
+        %p 材料
       .show-main__rigth--form--recipe
-        レシピ
+        %p レシピ
     .show-main__right--forms--post
       .show-main__right--forms--post__name
-        = @post.user.name
+        %p= @post.user.name
       .show-main__right--forms--post__title
-        = @post.title 
+        %p= @post.title 
       .show-main__right--forms--post__material
-        = @post.material
+        %p= @post.material
       .show-main__right--forms--post__body
-        = @post.body
-      .show-main__rigth--forms--post__manage
-      -if user_signed_in? && current_user.id == @post.user_id 
-        =link_to '編集', edit_post_path(@post.id), method: :get
-        =link_to '削除', post_path(@post.id), method: :delete
+        %p= @post.body
+
 
 
 .footer

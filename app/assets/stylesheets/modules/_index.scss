@@ -4,6 +4,7 @@
   padding: 0 150px;
   &__left {
     width: 60%;
+    padding-top: 20px; 
     &--groups {
       height: calc(100vh - 110px); 
       padding: 40px 0;
@@ -14,13 +15,16 @@
       padding: 10px 0 0 10px;
       &--lists {
         height: 270px;
-        margin: 30px 0;
+        margin: 10px 0;
         padding: 10px;
         font-size: 18px;
         font-weight: bold;
         text-align: left;
         .img {
           border-radius: 10px;
+          height: 230px;
+          width:  200px;
+          object-fit: cover;
         }
         &--textBox {
           &--text {
