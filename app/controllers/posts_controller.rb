@@ -7,6 +7,8 @@ class PostsController < ApplicationController
       @posts = Post.where('IKE ?', "%#{params[:keyword]}%")
     else
       @posts = Post.all
+      @parents = Category.all.order("id ASC").limit(3)
+
     end
   end
 
