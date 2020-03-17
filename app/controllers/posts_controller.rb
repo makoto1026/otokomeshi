@@ -7,9 +7,10 @@ class PostsController < ApplicationController
       @posts = Post.where('IKE ?', "%#{params[:keyword]}%")
     else
       @posts = Post.all
-      @parents = Category.all.order("id ASC").limit(3)
-
+      # @parents = Category.all.order("id ASC").limit(3)
     end
+    # @parents = Category.all.order("id ASC").limit(3)
+
   end
 
   def create
@@ -27,11 +28,27 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    # @category = Category.all.order("id ASC").limit(3) # categoryの親を取得
+    # respond_to do |format|
+    #   format.json
+    #   format.html
+    # end
   end
+
+  # def category_children  
+  #   @category_children = Category.find(params[:name]).children 
+  #   end
+  # # Ajax通信で送られてきたデータをparamsで受け取り､childrenで子を取得
+
+  # def category_grandchildren
+  #   @category_grandchildren = Category.find(params[:name]).children
+  #   end
 
   def show
     @post = Post.find(params[:id])
     @like = Like.new
+    # @category = Category.new
+
   end
 
   def update

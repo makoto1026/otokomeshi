@@ -5,9 +5,11 @@
   .header__nav__patty
   .header__nav__buns
 .header__lists
+  = link_to root_path, class: "header__lists--list" do
+    = "メインページ"
+  = link_to new_post_path, class: "header__lists--list" do
+    = "投稿する" 
   = link_to edit_user_path(current_user), class: "header__lists--list" do
     = "マイページ"
-  = link_to new_post_path, class: "header__lists--list" do
-    = "投稿する"
   = link_to destroy_user_session_path, method: :delete, class: "header__lists--list" do
-    = "ログアウト"
+    %p#logout= "ログアウト"

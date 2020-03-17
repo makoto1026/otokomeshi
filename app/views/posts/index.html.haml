@@ -17,13 +17,15 @@
     = form_tag('/posts/search', method: 'get') do
       = text_field_tag(:keyword)
       = submit_tag('検索する', class: "search-btn")
-  .main__right__categories
-    -@parents.each do |parent|
-      =parent.name
-      - parent.children.each do |child|
-        =child.name  
-        - child.children.each do |grandchild|
-          =grandchild.name
+
+-# - @parents.each do |parent|
+-#   =parent.name
+-#   - parent.children.each do |child|
+-#     =child.name 
+-#     - child.children.each do |grandchild|
+-#       =grandchild.name
+
+
 .footer
   = render partial: "layouts/footer"
 

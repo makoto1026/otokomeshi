@@ -20,15 +20,20 @@
         font-size: 18px;
         font-weight: bold;
         text-align: left;
+        &:hover {
+          filter: drop-shadow(3px 8px 3px #757575);
+        }
         .img {
           border-radius: 10px;
           height: 230px;
           width:  200px;
           object-fit: cover;
+
         }
         &--textBox {
           &--text {
             margin-bottom: 5px;
+            font-family: fantasy;
           }
         }
       }
@@ -86,8 +91,8 @@
    }
 }
 
-@media screen and (max-width: 850px) {
-  .main__right {
-    display: none;
+@media screen and (max-width: 760px) {
+  .main {
+    padding: 0px;
   }
 }

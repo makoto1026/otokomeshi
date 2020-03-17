@@ -8,7 +8,7 @@
 
 ingredient = Category.create(:name=>"食材")
 price      = Category.create(:name=>"予算")
-time       = Category.create(:name=>"所要時間")
+createTime       = Category.create(:name=>"所要時間")
 
 carrots  = ingredient.children.create(:name=>"野菜")
 meets    = ingredient.children.create(:name=>"肉")
@@ -20,10 +20,10 @@ price300 = price.children.create(:name=>"0~300円")
 price600 = price.children.create(:name=>"301~600円")
 price1000 = price.children.create(:name=>"600~1000円")
 
-time5 = time.children.create(:name=>"0~5分")
-time10 = time.children.create(:name=>"5~10分")
-time15 = time.children.create(:name=>"11~15分")
-time20 = time.children.create(:name=>"15~20分")
+time5 = createTime.children.create(:name=>"0~5分")
+time10 = createTime.children.create(:name=>"5~10分")
+time15 = createTime.children.create(:name=>"11~15分")
+time20 = createTime.children.create(:name=>"15~20分")
 
 carrots.children.create([{:name=>"にんじん"},{:name=>"たまねぎ"},{:name=>"じゃがいも"},{:name=>"キャベツ"},{:name=>"きのこ"},{:name=>"旬野菜（春）"},{:name=>"旬野菜（夏）"},{:name=>"旬野菜（秋・冬"},{:name=>"その他野菜類"}]) 
 meets.children.create([{:name=>"牛肉"},{:name=>"豚肉"},{:name=>"鶏肉"},{:name=>"ウインナー"},{:name=>"ハム"},{:name=>"ベーコン"},{:name=>"その他肉類"}])
