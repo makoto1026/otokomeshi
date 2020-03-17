@@ -50,3 +50,34 @@
     padding: 60px 20px;
   }
 }
+
+.post_select-details {
+  float: right;
+}
+
+@media screen and (max-width: 760px) {
+  .post-wrapper__groups {
+    padding: 20px 50px;
+    &--title {
+      height: 40px;
+    }
+    &--material {
+      height: 70px;
+    }
+    &--recipe {
+      height: 160px;
+    }
+    &--submit {
+      padding: 10px 27px;
+      text-decoration: none;
+      background-color: $green;
+      color: white;
+      font-size: 15px;
+      font-weight: bold;
+      border-radius: 50px;
+      border: 0 solid;
+      margin-left: 10px;
+      float: right;
+    }
+  }
+}

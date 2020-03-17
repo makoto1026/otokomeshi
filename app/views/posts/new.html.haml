@@ -9,5 +9,16 @@
       =f.text_area :body, class: "post-wrapper__groups--recipe", placeholder: " レシピを入力してください"
       = f.file_field :image, class: "post-wrapper__groups--file"
       = f.submit '送信', class: 'post-wrapper__groups--submit' 
+      -# .product_select-details
+      -#   .product_select-group
+      -#     .product_header
+      -#       カテゴリー
+      -#     .product_require
+      -#       必須
+      -#   .product_category-select
+      -#     = f.collection_select :category, @category, :id, :name, { prompt: "---" }, { class: "category_select-box", id: "category_select" }
+      -#     %i.fa.fa-chevron-down
+      -#   .product_select-children
+
 .footer
   = render partial: "layouts/footer"

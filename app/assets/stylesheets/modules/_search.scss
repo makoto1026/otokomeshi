@@ -8,7 +8,7 @@
     overflow: auto;
     p {
       text-align: center;
-      margin-top: 60px;
+      margin-top: 40px;
     }
     &--groups {
       padding: 40px 0;
@@ -21,6 +21,9 @@
         margin: 10px 0;
         padding: 10px;
         text-align: left;
+        &:hover {
+          filter: drop-shadow(3px 8px 3px #757575);
+        }
         .img {
           border-radius: 10px;
         }
@@ -90,7 +93,7 @@
    }
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 760px) {
   .main__right {
     display: none;
   }
