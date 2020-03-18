@@ -10,6 +10,7 @@ class PostsController < ApplicationController
       # @parents = Category.all.order("id ASC").limit(3)
     end
     # @parents = Category.all.order("id ASC").limit(3)
+    @posts = Post.order("id DESC")
 
   end
 
@@ -57,7 +58,7 @@ class PostsController < ApplicationController
   end
 
   def search
-    @posts = Post.search(params[:keyword])
+    @posts = Post.search(params[:keyword]).order("id DESC")
   end
 
   private

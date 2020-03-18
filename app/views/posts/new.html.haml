@@ -7,18 +7,35 @@
       =f.text_field :title, class: "post-wrapper__groups--title", placeholder: " タイトルを入力してください(10文字以内）"
       =f.text_area :material, class: "post-wrapper__groups--materials", placeholder: " 材料を入力してください"
       =f.text_area :body, class: "post-wrapper__groups--recipe", placeholder: " レシピを入力してください"
-      = f.file_field :image, class: "post-wrapper__groups--file"
-      = f.submit '送信', class: 'post-wrapper__groups--submit' 
-      -# .product_select-details
-      -#   .product_select-group
-      -#     .product_header
-      -#       カテゴリー
-      -#     .product_require
-      -#       必須
-      -#   .product_category-select
-      -#     = f.collection_select :category, @category, :id, :name, { prompt: "---" }, { class: "category_select-box", id: "category_select" }
-      -#     %i.fa.fa-chevron-down
-      -#   .product_select-children
+      = f.submit '送信', class: 'post-wrapper__groups--submit'
+      = f.label :image, class: "post-wrapper__groups--inputImage" do
+        = icon('fas', 'camera-retro')
+        = f.file_field :image, class: "post_img"
+
+  .post-wrapper__previews    
+    .post-wrapper__previews__image
+    -if @post.image.present?
+      =image_tag @post.image, id: :img_prev
+    -else
+      =image_tag "no_image.png", id: :img_prev
+    .post-wrapper__previews__category
+
+
+  
+
+
+
+
+-# .product_select-details
+-#   .product_select-group
+-#     .product_header
+-#       カテゴリー
+-#     .product_require
+-#       必須
+-#   .product_category-select
+-#     = f.collection_select :category, @category, :id, :name, { prompt: "---" }, { class: "category_select-box", id: "category_select" }
+-#     %i.fa.fa-chevron-down
+-#   .product_select-children
 
 .footer
   = render partial: "layouts/footer"

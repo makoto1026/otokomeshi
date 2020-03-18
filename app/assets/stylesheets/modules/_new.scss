@@ -4,9 +4,10 @@
   background-color: $beju;
   display: flex;
   &__groups {
-    width: 100%;    
+    width: 60%;    
     align-items: center;
-    padding: 30px 400px;
+    padding: 60px 50px 30px 200px;
+    position: relative;
     &--text {
       text-align: center;
     }
@@ -28,26 +29,37 @@
       border: 1px solid lightgray;
       margin-bottom: 20px;
     }
-    &--file {
-      width: 350px;
-      text-decoration: none;
-      font-weight: bold;
-    } 
     &--submit {
-      padding: 18px 35px;
+      padding: 12px 35px;
       text-decoration: none;
       background-color: $green;
       color: white;
       font-weight: bold;
       border-radius: 50px;
       border: 0 solid;
-      margin-left: 10px;
       float: right;
+      position: absolute;
+      right: -270px;
+      bottom: 26%;
+    }
+    &--inputImage {
+      font-size: 50px;
+      position: absolute;
+      right: -130px;
+      cursor: pointer;
+      bottom: 24%;
+      .post_img {
+        display: none;
+      } 
     }
   }
-  &__right {
-    width: 30%;
-    padding: 60px 20px;
+  &__previews {
+    width: 40%;
+    padding: 115px 100px 100px 20px;
+    #img_prev {
+      width: 300px;
+      border-radius: 5px;
+    }
   }
 }
 
