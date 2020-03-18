@@ -15,23 +15,26 @@
   
   .show-main__right
     .show-main__right--forms
-      .show-main__rigth--forms--name 
-        %p 投稿者 
-      .show-main__rigth--forms--title
-        %p タイトル
-      .show-main__rigth--forms--material
-        %p 材料
-      .show-main__rigth--form--recipe
-        %p レシピ
-    .show-main__right--forms--post
-      .show-main__right--forms--post__name
-        %p= @post.user.name
-      .show-main__right--forms--post__title
-        %p= @post.title 
-      .show-main__right--forms--post__material
-        %p= @post.material
-      .show-main__right--forms--post__body
-        %p= @post.body
+      .show-main__right--forms__name
+        .show-main__right--forms__name--title
+          %p投稿者
+        .show-main__right--forms__name--post
+          %p= @post.user.name
+      .show-main__right--forms__title
+        .show-main__right--forms__title--title
+          %pタイトル
+        .show-main__right--forms__title--post        
+          %p= @post.title 
+      .show-main__right--forms__material
+        .show-main__right--forms__material--title
+          %p材料
+        .show-main__right--forms__material--post         
+          %p= @post.material
+      .show-main__right--forms__recipe
+        .show-main__right--forms__recipe--title
+          %pレシピ
+        .show-main__right--forms__recipe--post 
+          %p= @post.body
 
 
 

@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
-  def index
-  end
+  # def index
+  #   @categories = Çategory.all(params[:name])
+  # end
 end
