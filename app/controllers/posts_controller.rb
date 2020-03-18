@@ -1,17 +1,14 @@
 class PostsController < ApplicationController
 
-  before_action :move_to_index, except: [:index, :show, :search]
+  # before_action :move_to_index, except: [:index, :show, :search]
 
   def index
     if params[:keyword]
       @posts = Post.where('IKE ?', "%#{params[:keyword]}%")
     else
       @posts = Post.all
-      # @parents = Category.all.order("id ASC").limit(3)
     end
-    # @parents = Category.all.order("id ASC").limit(3)
     @posts = Post.order("id DESC")
-    # @categories = Category.find_by(category_children[:name])
 
   end
 
@@ -30,27 +27,23 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    # @category = Category.all.order("id ASC").limit(3) # categoryの親を取得
-    # respond_to do |format|
-    #   format.json
-    #   format.html
-    # end
+    @category_parent_array = ["---"]
+      Category.where(ancestry: nil).each do |parent|
+        @category_parent_array << parent.name
+      end  
   end
 
-  # def category_children  
-  #   @category_children = Category.find(params[:name]).children 
-  #   end
-  # # Ajax通信で送られてきたデータをparamsで受け取り､childrenで子を取得
+  def get_category_children
+    @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
+  end
 
-  # def category_grandchildren
-  #   @category_grandchildren = Category.find(category_children[:child_id]).children
-  #   end
+  def get_category_grandchildren
+    @category_grandchildren = Category.find("#{params[:child_id]}").children
+  end
 
   def show
     @post = Post.find(params[:id])
     @like = Like.new
-    # @category = Category.new
-
   end
 
   def update
@@ -65,7 +58,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body, :image, :material, :keyword).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :body, :image, :material, :keyword, :category_id).merge(user_id: current_user.id)
   end
 
   def set_post
