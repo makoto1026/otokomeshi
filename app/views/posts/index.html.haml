@@ -16,7 +16,7 @@
     %p レシピ検索
     = form_tag('/posts/search', method: 'get') do
       = text_field_tag(:keyword)
-      = submit_tag('検索する', class: "search-btn")
+      = submit_tag('検索', id: "search-btn")
 
 -# - @parents.each do |parent|
 -#   =parent.name

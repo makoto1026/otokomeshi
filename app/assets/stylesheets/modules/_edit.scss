@@ -1,10 +1,12 @@
 .main__edit {
   height: calc(100vh - 110px);
   background-color: $beju;
+  display: flex;
   &--forms {
-    width: 100%;    
+    width: 60%;    
     align-items: center;
-    padding: 30px 400px;
+    padding: 60px 50px 30px 200px;
+    position: relative;
     &--title {
       height: 50px;
       width: 100%;
@@ -14,8 +16,8 @@
     &--material {
       height: 150px;
       width: 100%;
-      border: 1px solid lightgray;
       margin-bottom: 30px;
+      border: 1px solid lightgray;
     }
     &--recipe {
       height: 220px;
@@ -29,15 +31,35 @@
       font-weight: bold;
     } 
     &--submit {
-      padding: 18px 35px;
+      padding: 12px 35px;
       text-decoration: none;
       background-color: $green;
       color: white;
       font-weight: bold;
       border-radius: 50px;
       border: 0 solid;
-      margin-left: 10px;
       float: right;
+      position: absolute;
+      right: -270px;
+      bottom: 26%;
+    }
+    &--inputImage {
+      font-size: 50px;
+      position: absolute;
+      right: -130px;
+      cursor: pointer;
+      bottom: 24%;
+      .post_img {
+        display: none;
+      } 
+    }
+  }
+  &__previews {
+    width: 40%;
+    padding: 115px 100px 100px 20px;
+    #img_prev {
+      width: 300px;
+      border-radius: 5px;
     }
   }
 }

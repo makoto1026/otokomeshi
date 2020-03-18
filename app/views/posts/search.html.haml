@@ -26,13 +26,11 @@
           .main__left--groups--lists--textBox--text
             .main__left--groups--lists--textBox--text  
               = post.title
-            .main__left--groups--lists--textBox--material
-              = post.material
   .main__right
     レシピ検索
     = form_tag('/posts/search', method: 'get') do
       = text_field_tag(:keyword)
-      = submit_tag('検索する', class: "search-btn")
+      = submit_tag('検索', id: "search-btn")
     -# .main__right--kategories
     -#   .main__right--kategories--text
     -#     カテゴリ一覧
