@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   def edit
     @posts = current_user.posts
+    @posts = Post.order("id DESC")
   end
 
   def update
