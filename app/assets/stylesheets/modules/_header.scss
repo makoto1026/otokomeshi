@@ -92,6 +92,7 @@
   .open {
     clip-path: circle(1100px at 90% -10%);
     -webkit-clip-path: circle(1100px at 90% -10%);
+    z-index: 1;
   }
 }
 

@@ -11,11 +11,12 @@ class PostsController < ApplicationController
     end
     # @parents = Category.all.order("id ASC").limit(3)
     @posts = Post.order("id DESC")
+    # @categories = Category.find_by(category_children[:name])
 
   end
 
   def create
-    Post.create(post_params)
+      Post.create(post_params)
   end
 
   def edit
@@ -42,7 +43,7 @@ class PostsController < ApplicationController
   # # Ajax通信で送られてきたデータをparamsで受け取り､childrenで子を取得
 
   # def category_grandchildren
-  #   @category_grandchildren = Category.find(params[:name]).children
+  #   @category_grandchildren = Category.find(category_children[:child_id]).children
   #   end
 
   def show

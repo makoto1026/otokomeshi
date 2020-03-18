@@ -1,4 +1,5 @@
 .main {
+  height: calc(100vh - 110px);
   display: flex;
   background-color: $beju;
   padding: 0 150px;
@@ -6,7 +7,6 @@
     width: 60%;
     padding-top: 20px; 
     &--groups {
-      height: calc(100vh - 110px); 
       padding: 40px 0;
       overflow: auto;
       display: flex;
@@ -92,7 +92,11 @@
 }
 
 @media screen and (max-width: 760px) {
+
   .main {
-    padding: 0px;
+    padding: 20px;
+    &__right {
+      width: 50%;
+    }
   }
 }

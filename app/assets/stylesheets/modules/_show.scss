@@ -43,20 +43,51 @@
   }
   &__right {
     width: 50%;
-    display: flex;
-    &--forms {
-      width: 20%;
+    padding: 20px;
+    p {
+      margin-bottom: 30px;
       font-size: 16px;
-      align-items: center;
-      p {
-        margin-bottom: 30px;
-      }
     }
-    &--forms--post {
-      width: 80%;
-      align-items: center;
-      p {
-        margin-bottom: 30px;
+    &--forms {
+      &__name {
+        height: 50px;
+        display: flex;
+        &--title {
+          width: 30%;
+        }
+        &--post {
+          width: 70%;
+        }
+      }
+      &__title {
+        height: 50px;
+        display: flex;
+        &--title {
+          width: 30%;
+        }
+        &--post {
+          width: 70%;
+        }
+      }
+      &__material {
+        height: 200px;
+        display: flex;
+        &--title {
+          width: 30%;
+        }
+        &--post {
+          width: 70%;
+        }
+      }
+      &__recipe {
+        height: 200px;
+        display: flex;
+        &--title {
+          width: 30%;
+        }
+        &--post {
+          width: 70%;
+        }
       }
     }
   }
@@ -72,5 +103,31 @@ a {
 
 .iine-count {
   text-decoration: none;
-
 }
+
+@media screen and (max-width: 760px) {
+  .show-main {
+    padding: 40px 100px;
+    .show-main__left {
+      width: 50%;
+      img {
+        height: 240px;
+        width: 200px;
+        object-fit: cover;
+      }
+      &--iine {
+        width: 100px;
+        font-size: 15px;
+        top: 260px;
+        left: 70px;
+      }
+      &__manage {
+        top: 330px;
+        left: 70px;
+      }
+    }
+    .show-main__right {
+      width: 50%;
+    }
+  }
+}               
