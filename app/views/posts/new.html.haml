@@ -12,14 +12,21 @@
         = icon('fas', 'camera-retro')
         = f.file_field :image, class: "post_img"
 
-      .listing-form-box
+      
+      .listing-form-box 
         .listing-product-detail__category
-          = f.label 'カテゴリー', class: 'listing-default__label'
-          %span.listing-default--require 必須
+          %span.listing-default--require 
           .listing-select-wrapper
             .listing-select-wrapper__box
-              = f.select :category, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: :parent_category, name: 'category'}
-              %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
-            
+              = f.select :category_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+              %p カテゴリ選択 ※必須
+
+  .post-wrapper__previews    
+    .post-wrapper__previews__image
+    -if @post.image.present?
+      =image_tag @post.image, id: :img_prev
+    -else
+      =image_tag "no_image.png", id: :img_prev
+
 .footer
   = render partial: "layouts/footer"

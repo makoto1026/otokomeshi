@@ -1,11 +1,11 @@
 class Post < ApplicationRecord
 
   belongs_to :user, foreign_key: 'user_id'
-  has_many   :comments
   has_many :likes
   has_many :liked_users, through: :likes, source: :user
   belongs_to :category
-  validates :title, :body, :material, presence: :true
+
+  validates :title, :body, :material, :category_id, presence: :true
 
   mount_uploader :image, ImagesUploader
 
@@ -17,3 +17,4 @@ class Post < ApplicationRecord
 
 
 end
+

@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  # before_action :move_to_index, except: [:index, :show, :search]
+  before_action :move_to_index, except: [:index, :show, :search]
 
   def index
     if params[:keyword]
@@ -9,12 +9,12 @@ class PostsController < ApplicationController
       @posts = Post.all
     end
     @posts = Post.order("id DESC")
-
+    @parents = Category.all.order("id ASC").limit(3)
   end
 
   def create
       Post.create(post_params)
-  end
+    end
 
   def edit
     @post = Post.find(params[:id])
@@ -27,7 +27,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    @category_parent_array = ["---"]
+    @category_parent_array = ["カテゴリ選択"]
       Category.where(ancestry: nil).each do |parent|
         @category_parent_array << parent.name
       end  
@@ -58,7 +58,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body, :image, :material, :keyword, :category_id).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :body, :image, :material, :category_id).merge(user_id: current_user.id)
   end
 
   def set_post
@@ -71,3 +71,4 @@ class PostsController < ApplicationController
 
   
 end
+

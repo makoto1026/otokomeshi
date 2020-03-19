@@ -70,7 +70,7 @@
         }
       }
       &__material {
-        height: 200px;
+        height: 150px;
         display: flex;
         &--title {
           width: 30%;
@@ -80,7 +80,17 @@
         }
       }
       &__recipe {
-        height: 200px;
+        height: 150px;
+        display: flex;
+        &--title {
+          width: 30%;
+        }
+        &--post {
+          width: 70%;
+        }
+      }
+      &__category {
+        height: 50px;
         display: flex;
         &--title {
           width: 30%;
