@@ -1,7 +1,7 @@
 .post-wrapper {
   height: calc(100vh - 110px);
   width: 100%;
-  background-color: $beju;
+  background-image: url('/assets/bgi3.png');
   display: flex;
   &__groups {
     width: 60%;    
@@ -146,5 +146,11 @@
       border-radius: 5px;
       object-fit: cover;
     }
+  }
+  .listing-form__box {
+    width: 30px;
+  }
+  #parent_category {
+    width: 30px;
   }
 }
