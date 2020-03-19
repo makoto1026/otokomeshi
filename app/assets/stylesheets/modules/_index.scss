@@ -1,7 +1,9 @@
 .main {
   height: calc(100vh - 110px);
   display: flex;
-  background-color: $beju;
+  width: 100%;
+  background-image: url('/assets/bgi3.png');
+  // background-size: cover;
   padding: 0 150px;
   &__left {
     width: 60%;
@@ -92,11 +94,7 @@
 }
 
 @media screen and (max-width: 760px) {
-
   .main {
     padding: 20px;
-    &__right {
-      width: 50%;
-    }
   }
 }
