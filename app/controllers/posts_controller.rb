@@ -9,12 +9,17 @@ class PostsController < ApplicationController
       @posts = Post.all
     end
     @posts = Post.order("id DESC")
-    @parents = Category.all.order("id ASC").limit(3)
+    # @categories = Category.
   end
 
   def create
-      Post.create(post_params)
-    end
+    @post = Post.create(post_params)
+    # if @post.save!
+    #   redirect_to posts_path
+    # else
+    #   render new_post_path
+    # end
+  end
 
   def edit
     @post = Post.find(params[:id])
@@ -58,7 +63,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body, :image, :material, :category_id).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :body, :image, :material, :category_id, :likes_count).merge(user_id: current_user.id)
   end
 
   def set_post

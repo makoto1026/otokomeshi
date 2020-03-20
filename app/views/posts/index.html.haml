@@ -17,6 +17,11 @@
     = form_tag('/posts/search', method: 'get') do
       = text_field_tag(:keyword)
       = submit_tag('検索', id: "search-btn")
+      
+-# .main__categories
+-#   -@categories.each do |category|
+-#     .main__categorires-name  
+-#       = category.name
 
 .footer
   = render partial: "layouts/footer"
