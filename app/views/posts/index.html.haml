@@ -18,18 +18,18 @@
       = form_tag('/posts/search', method: 'get') do
         = text_field_tag(:keyword)
         = submit_tag('検索', id: "search-btn")      
-    .main__right__categories
-      %p#text カテゴリ一覧
-      .main__right__categories__groups
-        -@category_materials.each do |cm|
-          .main__right__categories__groups__name  
-            = cm.name
-        -@category_times.each do |ct|
-          .main__right__categories__groups__name
-            = ct.name
-        -@category_moneies.each do |cmn|
-          .main__right__categories__groups__name 
-            = cmn.name
+  -#   .main__right__categories
+  -#     %p#text カテゴリ一覧
+  -#     .main__right__categories__groups
+  -#       -@category_materials.each do |cm|
+  -#         .main__right__categories__groups__name  
+  -#           = cm.name
+  -#       -@category_times.each do |ct|
+  -#         .main__right__categories__groups__name
+  -#           = ct.name
+  -#       -@category_moneies.each do |cmn|
+  -#         .main__right__categories__groups__name 
+  -#           = cmn.name
 
 .footer
   = render partial: "layouts/footer"
