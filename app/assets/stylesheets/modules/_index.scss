@@ -41,56 +41,77 @@
       }
     } 
   }
-   &__right {
-     height: calc(100vh - 110px);
-     width: 40%;
-     padding: 60px 40px;
-     text-align: center;
-     form {
-       height: 30px;
-       
-       font-size: 15px;
-       padding-left: 10px;
-       margin: 30px auto;
-       display: flex;
-     }
-     #keyword {
+  &__right {
+    height: calc(100vh - 110px);
+    width: 40%;
+    padding: 60px 0;
+    text-align: center;
+    &__search { 
+      height: 20%;
+      form {
+        height: 30px;
+        font-size: 15px;
+        padding-left: 10px;
+        // margin: auto;
+        display: flex;
+      }
+      #keyword {
+        width: 100%;
+        margin-right: 10px;
+      }
+      #search-btn {
+        width: 100px;
+        margin: auto;
+      }
+      &--btn {
+        width: 80px;
+        margin: 10px;     
+      }
+    }
+    &__categories {
+      height: 70%;
       width: 100%;
-      margin-right: 10px;
-     }
-     .search-btn {
-       width: 100px;
-       margin: auto;
-     }
-     &--btn {
-       width: 80px;
-       margin: 10px;     
-     }
-     &--kategories {
-       height: 500px;
-       padding: 0 30px;
-       &--text {
-         text-align: center;
-         margin-bottom: 30px;
-       }
-       &--lists {
+      #text {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      &__groups {
         display: flex;
         flex-direction: row;
-        flex-wrap: wrap;
-        &--tag {
-          height: 40px;
+        flex-wrap: wrap; 
+        background-color: #fff;
+        border: 1px solid lightgray;
+        border-radius: 5px;  
+        padding: 10px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &__name {
           width: 30%;
-          line-height: 40px;
-          font-size: 13px;
-          color: white;
-          font-weight: bold;
-          background-color: #757575;
-          margin: 5px;
-          border-radius: 10px;
+          font-size: 14px;
+          border: 1px solid rgb(182, 181, 181);
+          border-radius: 5px;
+          margin: 2px;
+          position: relative;
+          background-color: #ffffff;
+          border-radius: 4px;
+          line-height: 21px;
+          -webkit-transition: none;
+          transition: none;
+          box-shadow: 0 3px 0 #e7e7e7;
+          text-shadow: 0 1px 1px rgba(0, 0, 0, .4);  
+          &:hover {
+            top: -4px;
+            box-shadow: 0 7px 0 #dfdfdf;
+          }
+          &:active {
+            top: 3px;
+            box-shadow: none;
+          }
         }
-       }
-     }
-   }
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 760px) {

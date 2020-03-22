@@ -3,7 +3,7 @@ class Post < ApplicationRecord
   belongs_to :user, foreign_key: 'user_id'
   has_many :likes
   has_many :liked_users, through: :likes, source: :user
-  belongs_to :category, foreign_key: 'category_id'
+  belongs_to :category, optional: true
 
   validates :title, :body, :material, presence: :true
 

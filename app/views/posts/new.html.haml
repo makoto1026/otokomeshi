@@ -18,7 +18,7 @@
           %span.listing-default--require 
           .listing-select-wrapper
             .listing-select-wrapper__box
-              = f.select :category_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category', name: 'category'}
+              = f.select :category_id, {'a':1, 'b':3}, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
               %p カテゴリ選択 ※必須
 
   .post-wrapper__previews    
