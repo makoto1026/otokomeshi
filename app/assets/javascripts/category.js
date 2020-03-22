@@ -1,4 +1,4 @@
-$('DOMContentLoaded', function() {
+window.addEventListener('DOMContentLoaded', function() {
 
 
   $(function(){
@@ -12,7 +12,7 @@ $('DOMContentLoaded', function() {
       var childSelectHtml = '';
       childSelectHtml = `<div class='listing-select-wrapper__added' id= 'children_wrapper'>
                           <div class='listing-select-wrapper__box'>
-                            <select class="listing-select-wrapper__box--select" id="child_category" name="category_id">
+                            <select class="listing-select-wrapper__box--select" id="child_category" name="post[category_id]">
                               <option value="カテゴリ選択" data-category="カテゴリ選択">カテゴリ選択</option>
                               ${insertHTML}
                             <select>
@@ -25,7 +25,7 @@ $('DOMContentLoaded', function() {
       var grandchildSelectHtml = '';
       grandchildSelectHtml = `<div class='listing-select-wrapper__added' id= 'grandchildren_wrapper'>
                                 <div class='listing-select-wrapper__box'>
-                                  <select class="listing-select-wrapper__box--select" id="grandchild_category" name="category_id">
+                                  <select class="listing-select-wrapper__box--select" id="grandchild_category" name="post[category_id]">
                                     <option value="カテゴリ選択" data-category="カテゴリ選択">カテゴリ選択</option>
                                     ${insertHTML}
                                   </select>
