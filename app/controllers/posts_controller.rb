@@ -9,16 +9,13 @@ class PostsController < ApplicationController
       @posts = Post.all
     end
     @posts = Post.order("id DESC")
-    # @categories = Category.
+    @category_materials = Category.where(id:16..56)
+    @category_times = Category.where(id:12..15)
+    @category_moneies = Category.where(id:9..11)
   end
 
   def create
     @post = Post.create(post_params)
-    # if @post.save!
-    #   redirect_to posts_path
-    # else
-    #   render new_post_path
-    # end
   end
 
   def edit
@@ -58,6 +55,9 @@ class PostsController < ApplicationController
 
   def search
     @posts = Post.search(params[:keyword]).order("id DESC")
+    @category_materials = Category.where(id:16..56)
+    @category_times = Category.where(id:12..15)
+    @category_moneies = Category.where(id:9..11)
   end
 
   private

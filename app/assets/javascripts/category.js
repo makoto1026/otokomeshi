@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', function() {
+$('DOMContentLoaded', function() {
 
 
   $(function(){
