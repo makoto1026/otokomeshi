@@ -5,13 +5,15 @@ class PostsController < ApplicationController
   def index
     if params[:keyword]
       @posts = Post.where('IKE ?', "%#{params[:keyword]}%")
+    # elsif
+    #   params[:category_id]
+    #   @category = Category.find(params[:category_id])
+    #   @cate = @category.posts.order(created_at: :desc).all
     else
       @posts = Post.all
     end
     @posts = Post.order("id DESC")
-    @category_materials = Category.where(id:16..56)
-    @category_times = Category.where(id:12..15)
-    @category_moneies = Category.where(id:9..11)
+    @category = Category.where(id:16..56)
   end
 
   def create
@@ -58,6 +60,12 @@ class PostsController < ApplicationController
     @category_materials = Category.where(id:16..56)
     @category_times = Category.where(id:12..15)
     @category_moneies = Category.where(id:9..11)
+    # if params[:category_id]
+    #   @categor = Category.find(params[:category_id])
+    #   @category = @categories.posts.order(created_at: :desc).all
+    # else
+    #   @cate = Post.order(created_at: :desc).all
+    # end
   end
 
   private

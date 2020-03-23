@@ -11,6 +11,6 @@ Rails.application.routes.draw do
       get 'get_category_grandchildren', defaults: { format: 'json' }
     end
     resources :likes,    only: [:create, :destroy]
-    resources :categories, only: [:show]
+    # resources :categories, only: :show
   end
 end

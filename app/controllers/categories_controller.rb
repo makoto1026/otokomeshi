@@ -1,8 +1,10 @@
-class CategoriesController < ApplicationController
-  def show
-    @posts = Post.search(params[:keyword]).order("id DESC")
-    @category_materials = Category.where(id:16..56)
-    @category_times = Category.where(id:12..15)
-    @category_moneies = Category.where(id:9..11)
-  end
-end
+# class CategoriesController < ApplicationController
+#   def show
+#     if  params[:category_id]
+#       @category = Category.find(params[:category_id])
+#       @cate = @category.posts.order(created_at: :desc).all
+#     else
+#       @posts = Post.all
+#     end
+#   end
+# end

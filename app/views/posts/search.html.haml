@@ -1,39 +1,30 @@
-.header
-  =render partial: "layouts/header"
+-if params[:keyword]
+  .header
+    =render partial: "layouts/header"
+  .main
+    .main__left
+      %p 検索結果一覧
+      .main__left--groups
+        -@posts.each do |post| 
+          .main__left--groups--lists
+            .main__left--groups--lists--image
+              = link_to image_tag(post.image, height: "230", width: "200", class: "img"), post_path(post.id), class: "img"
+            .main__left--groups--lists--textBox
+            .main__left--groups--lists--textBox--text
+              .main__left--groups--lists--textBox--text  
+                = post.title
+            
+    .main__right
+      .main__right__search
+        %p レシピ検索
+        = form_tag('/posts/search', method: 'get') do
+          = text_field_tag(:keyword)
+          = submit_tag('検索', id: "search-btn")  
+  .footer
+    = render partial: "layouts/footer"
+     
+- else
+  .mada
 
-.main
-  .main__left
-    %p 検索結果一覧
-    .main__left--groups
-      -@posts.each do |post| 
-        .main__left--groups--lists
-          .main__left--groups--lists--image
-            = link_to image_tag(post.image, height: "230", width: "200", class: "img"), post_path(post.id), class: "img"
-          .main__left--groups--lists--textBox
-          .main__left--groups--lists--textBox--text
-            .main__left--groups--lists--textBox--text  
-              = post.title
-              
-  .main__right
-    .main__right__search
-      %p レシピ検索
-      = form_tag('/posts/search', method: 'get') do
-        = text_field_tag(:keyword)
-        = submit_tag('検索', id: "search-btn")      
-    -# .main__right__categories
-    -#   %p#text カテゴリ一覧
-    -#   .main__right__categories__groups
-    -#     -@category_materials.each do |cm|
-    -#       .main__right__categories__groups__name  
-    -#         = cm.name
-    -#     -@category_times.each do |ct|
-    -#       .main__right__categories__groups__name
-    -#         = ct.name
-    -#     -@category_moneies.each do |cmn|
-    -#       .main__right__categories__groups__name 
-    -#         = cmn.name
-        
-.footer
-  = render partial: "layouts/footer"
 
   

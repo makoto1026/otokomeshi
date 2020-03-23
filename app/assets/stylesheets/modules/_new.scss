@@ -59,8 +59,10 @@
     padding: 115px 100px 100px 20px;
     #img_prev {
       width: 300px;
+      height: 300px;
       border-radius: 5px;
       object-fit: cover;
+      border: 1px solid #000;
     }
   }
   .listing-form-box {
