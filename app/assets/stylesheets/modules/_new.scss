@@ -110,12 +110,14 @@
     padding: 20px 20px 20px 40px;
     &--title {
       height: 40px;
+      width: 100%;
     }
-    &--material {
-      height: 70px;
+    &--materials {
+      height: 120px;
+      width: 100%;
     }
     &--recipe {
-      height: 160px;
+      height: 220px;
     }
     &--submit {
       padding: 6px 20px;
@@ -145,15 +147,26 @@
   .post-wrapper__previews {
     width: 45%;
     #img_prev {
+      height: 200px;
       width: 250px;
+      margin-top: -80px;
       border-radius: 5px;
       object-fit: cover;
     }
   }
-  .listing-form__box {
-    width: 30px;
+  .listing-form-box {
+    width: 70px;
+    p {
+      display: none;
+    }
   }
   #parent_category {
-    width: 30px;
+    margin: 100px 0 0 170px;
+  }
+  #child_category {
+    margin: 0 0 0 170px;
+  }
+  #grandchild_category {
+    margin: 0 0 0 170px;
   }
 }

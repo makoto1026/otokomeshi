@@ -4,9 +4,9 @@
   .top-wrapper__bottom
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       .top-wrapper__bottom--input
-        = f.email_field :email, autofocus: true, class: "input", placeholder: "　メールアドレス"
+        = f.email_field :email, autofocus: true, class: "input", placeholder: " メールアドレス"
       .top-wrapper__bottom--input
-        = f.password_field :password, autocomplete: "off", class: "input", placeholder: "　パスワード（英数字８文字以上）"
+        = f.password_field :password, autocomplete: "off", class: "input", placeholder: " パスワード（英数字８文字以上）"
       .top-wrapper__bottom--input
         = f.submit "ログイン", class: 'login_btn' 
         = render "devise/shared/links"
