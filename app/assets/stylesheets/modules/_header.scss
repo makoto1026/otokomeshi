@@ -3,6 +3,7 @@
   width: 100vw;
   padding: 0 50px;
   background-color: #FCAA01;
+  position: relative;
   filter: drop-shadow(3px 8px 3px #757575);
   // position: relative;
   &__logo {
@@ -48,6 +49,7 @@
         top: calc(100% - 3px);        
       }
     }
+
   }
 }
 

@@ -1,14 +1,10 @@
 class PostsController < ApplicationController
 
-  # before_action :move_to_index, except: [:index, :show, :search]
+  before_action :move_to_index, except: [:index, :show, :search]
 
   def index
     if params[:keyword]
       @posts = Post.where('IKE ?', "%#{params[:keyword]}%")
-    # elsif
-    #   params[:category_id]
-    #   @category = Category.find(params[:category_id])
-    #   @cate = @category.posts.order(created_at: :desc).all
     else
       @posts = Post.all
     end
@@ -56,20 +52,8 @@ class PostsController < ApplicationController
   end
 
   def search
-    # if params[:category_id]
-    #   @post = Post.find(params[:category_id])
-    # else
-      @posts = Post.search(params[:keyword]).order("id DESC")
-      @category_materials = Category.where(id:16..56)
-      @category_times = Category.where(id:12..15)
-      @category_moneies = Category.where(id:9..11)
-    # if params[:category_id]
-    #   @categor = Category.find(params[:category_id])
-    #   @category = @categories.posts.order(created_at: :desc).all
-    # else
-    #   @cate = Post.order(created_at: :desc).all
-    # end
-    # end
+    @posts = Post.search(params[:keyword]).order("id DESC")
+    @category = Category.where(id:16..56)
   end
 
   private
