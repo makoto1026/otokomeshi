@@ -4,8 +4,8 @@
   .main__left
     %p カテゴリ検索一覧
     .main__left--groups
-      -if @posts.present?
-        -@posts.each do |post| 
+      -if @post.present?
+        -@post.each do |post| 
           .main__left--groups--lists
             .main__left--groups--lists--image
               = link_to image_tag(post.image, height: "230", width: "200", class: "img"), post_path(post.id), class: "img"

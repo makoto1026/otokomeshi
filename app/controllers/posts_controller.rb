@@ -56,15 +56,19 @@ class PostsController < ApplicationController
   end
 
   def search
-    @posts = Post.search(params[:keyword]).order("id DESC")
-    @category_materials = Category.where(id:16..56)
-    @category_times = Category.where(id:12..15)
-    @category_moneies = Category.where(id:9..11)
+    # if params[:category_id]
+    #   @post = Post.find(params[:category_id])
+    # else
+      @posts = Post.search(params[:keyword]).order("id DESC")
+      @category_materials = Category.where(id:16..56)
+      @category_times = Category.where(id:12..15)
+      @category_moneies = Category.where(id:9..11)
     # if params[:category_id]
     #   @categor = Category.find(params[:category_id])
     #   @category = @categories.posts.order(created_at: :desc).all
     # else
     #   @cate = Post.order(created_at: :desc).all
+    # end
     # end
   end
 
