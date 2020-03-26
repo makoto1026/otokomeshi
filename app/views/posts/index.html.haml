@@ -21,10 +21,9 @@
     .main__right__category
       %p#text カテゴリ一覧
       .main__right__category__groups
-        -@category.each do |c|
-          =link_to c.name, search_posts_path(c.id), class: "main__right__category__groups__name"
+        -@category.each do |category|
+          =link_to category.name, category_path(category.id), class: "main__right__category__groups__name"
 
 .footer
   = render partial: "layouts/footer"
-
   
