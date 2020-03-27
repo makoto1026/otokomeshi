@@ -34,7 +34,7 @@ class PostsController < ApplicationController
   end
 
   def get_category_children
-    @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
+    @category_children = Category.find_by(name: "#{params[:parent_id]}", ancestry: nil).children
   end
 
   def get_category_grandchildren
