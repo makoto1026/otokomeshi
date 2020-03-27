@@ -1,7 +1,7 @@
 .mypage__main {
   height: calc(100vh - 110px);
   display: flex;
-  background-image: image-url('/assets/bgi3.png');
+  background-image: image-url('bgi3.png');
   padding: 0 150px;
   &--left {
     width: 40%;
