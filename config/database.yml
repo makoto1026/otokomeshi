@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: otokomeshi_production
-  username: otokomeshi
-  password: <%= ENV['OTOKOMESHI_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
