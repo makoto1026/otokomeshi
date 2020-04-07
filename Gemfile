@@ -72,3 +72,6 @@ gem 'mini_magick'
 gem 'pry-rails'
 gem 'rb-readline', '~> 0.4.2'
 gem 'ancestry', '~> 3.0.7'
+gem 'mini_racer', platforms: :ruby
+gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection"

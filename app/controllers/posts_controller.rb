@@ -28,9 +28,9 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     @category_parent_array = ["カテゴリ選択"]
-      Category.where(ancestry: nil).each do |parent|
-        @category_parent_array << parent.name
-      end  
+      @array = Category.where(ancestry: nil).pluck(:name)
+      @category_parent_array.push(@array)
+      @category_parent_array.flatten!
   end
 
   def get_category_children

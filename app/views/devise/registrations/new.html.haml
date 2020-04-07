@@ -8,9 +8,15 @@
         = f.text_field :name, autofocus: true, placeholder: " ユーザーネーム", class: "form"
       .sign_up-wrapper__right--form
         = f.email_field :email, placeholder: " メールアドレス", class: "form"
+      - if @sns_id.present?
+        = hidden_field_tag :sns_auth, true
+      - else
       .sign_up-wrapper__right--form
         = f.password_field :password, autocomplete: "off", placeholder: " パスワード（英数字８文字以上）", class: "form"
       .sign_up-wrapper__right--form
         = f.password_field :password_confirmation, autocomplete: "off", placeholder: " パスワード再入力", class: "form"
-      = f.submit "アカウント作成", class: 'sign_up-btn'
-      = render "devise/shared/links"
+      .sign_up-wrapper__right--btn
+        = f.submit "アカウント作成", class: 'sign_up-btn'
+        = render "devise/shared/links"
+        = link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path, method: :post, class: "google"
+

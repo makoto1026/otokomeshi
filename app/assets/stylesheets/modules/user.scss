@@ -99,8 +99,12 @@
       border-bottom: 1px solid lightgray;
       text-align: center;
     }
+    &--btn {
+      display: flex;
+      justify-content: center;
+    }
     .login_btn {
-      padding: 20px 100px;
+      padding: 15px 70px;
       background-color: $orange;
       margin: 20px 0;
       color: white;
@@ -108,13 +112,23 @@
       border-radius: 50px;
       border: 0 solid;
     }
-    .sign_up {
-      padding: 24.5px 100px;
-      text-decoration: none;
-      background-color: $green;
+    .google {
+      padding: 15px 40px;
+      background-color: blue;
+      margin: 20px 0;
       color: white;
       font-weight: bold;
-      margin-left: 40px;
+      border-radius: 50px;
+      border: 0 solid;
+    }
+    .sign_up {
+      padding: 15px 70px;
+      text-decoration: none;
+      background-color: $green;
+      margin: 20px 0;
+      color: white;
+      font-weight: bold;
+      margin: 20px 40px;
       border-radius: 50px;
     }
   }
@@ -151,8 +165,12 @@
       color: white;
       font-weight: bold;
     }
+    &--btn {
+      display: flex;
+      align-items: center;
+    }
     .sign_up-btn {
-      padding: 20px 50px;
+      padding: 15px 50px;
       background-color: #61C359;
       margin: 20px 0;
       color: white;
@@ -161,12 +179,23 @@
       border: 0 solid;
     }
     .sign_in {
-      padding: 24px 70px;
+      padding: 15px 70px;
       text-decoration: none;
       background-color: #FAFAFA;
       color: $black;
-      margin: 0 30px 0 5px;
+      // margin: 0 30px 0 5px;
       color: #FCAA01;
+      font-weight: bold;
+      border-radius: 50px;
+      border: 0 solid;
+    }
+    .google {
+      padding: 15px 40px;
+      text-decoration: none;
+      background-color: blue;
+      color: $black;
+      // margin: 0 30px 0 5px;
+      color: $white;
       font-weight: bold;
       border-radius: 50px;
       border: 0 solid;

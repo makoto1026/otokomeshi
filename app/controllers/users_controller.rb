@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email).merge(id: current_user.id)
+    params.require(:user).permit(:name, :email)
   end
 end
 

@@ -1,5 +1,5 @@
 .main__left
-  %p 検索結果一覧
+  %p 「#{params[:keyword]}」　の検索結果一覧
   .main__left--groups
     -@posts.each do |post| 
       .main__left--groups--lists
