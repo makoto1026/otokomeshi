@@ -36,7 +36,7 @@
 - レスポンシブル対応
 
 ## ユーザー登録（Google認証機能つき）
-<img width="1440" alt="c00f70ac882440adb637669e70e3d090" src="https://user-images.githubusercontent.com/58877984/79036295-e494f400-7c01-11ea-9bcd-d9526ba37f9b.png">
+<img width="1440" alt="48b91868fb63cedc029b06c622344aef" src="https://user-images.githubusercontent.com/58877984/79039888-68a9a480-7c1f-11ea-8b78-6f383e46689b.png">
 gemファイル「devise」を導入しユーザーネーム、メールアドレス、パスワードにてユーザー登録を実現しています。
 また、gemファイル「omniauth-google-oauth2」及び「omniauth-rails_csrf_protection」を導入して
 Googleアカウントによる認証機能も設定しています。
