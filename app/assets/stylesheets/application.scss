@@ -2,6 +2,7 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "colors";
+@import "modules/mixin";
 @import "modules/header";
 @import "modules/footer";
 @import "modules/index";
@@ -25,29 +26,3 @@
 .wrapper {
   width: 100vw;
 }
-
-// #cursor{
-//   transform: translate(0,0);
-//   pointer-events: none;
-//   position: fixed;
-//   top: -4px;    //座標調節（カーソル位置と円の中心を合わせる）
-//   left: -4px;   //座標調節（カーソル位置と円の中心を合わせる）
-//   width: 8px;   //カーソルの直径
-//   height: 8px;  //カーソルの直径
-//   background: rgba(0,0,0,0.75);
-//   border-radius: 50%;
-//   z-index: 999;
-//   transition: width .3s, height .3s, top .3s, left .3s;
-
-//   &.hov_{
-//       top: -12px;    //大きくなった分の座標調節
-//       left: -12px;   //大きくなった分の座標調節
-//       width: 32px;   //カーソルの直径
-//       height: 32px;  //カーソルの直径
-//       background: rgba(200,50,50,0.75);
-//   }
-// }
-// html,body,a{
-//   cursor: none;
-// }
-

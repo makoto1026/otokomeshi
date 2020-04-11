@@ -1,8 +1,6 @@
 .mypage__main {
-  height: calc(100vh - 110px);
+  @include donePage($padding: 60px 250px);
   display: flex;
-  background-image: image-url('bgi3.png');
-  padding: 0 150px;
   &--left {
     width: 40%;
     padding: 60px 40px;
@@ -104,32 +102,20 @@
       justify-content: center;
     }
     .login_btn {
-      padding: 15px 70px;
+      @include btn();
       background-color: $orange;
-      margin: 20px 0;
-      color: white;
-      font-weight: bold;
-      border-radius: 50px;
       border: 0 solid;
     }
     .google {
-      padding: 15px 40px;
+      @include btn($padding: 15px 40px);
       background-color: blue;
-      margin: 20px 0;
       color: white;
-      font-weight: bold;
-      border-radius: 50px;
       border: 0 solid;
     }
     .sign_up {
-      padding: 15px 70px;
+      @include btn($margin: 20px 40px);
       text-decoration: none;
       background-color: $green;
-      margin: 20px 0;
-      color: white;
-      font-weight: bold;
-      margin: 20px 40px;
-      border-radius: 50px;
     }
   }
 }
@@ -152,7 +138,7 @@
     }
     .new_user {
       width: 100%;
-      margin: 30% 0;
+      margin: 10rs0px 0;
     }
     .form {
       height: 50px;
@@ -166,39 +152,29 @@
       font-weight: bold;
     }
     &--btn {
-      display: flex;
-      align-items: center;
-    }
-    .sign_up-btn {
-      padding: 15px 50px;
-      background-color: #61C359;
-      margin: 20px 0;
-      color: white;
-      font-weight: bold;
-      border-radius: 50px;
-      border: 0 solid;
-    }
-    .sign_in {
-      padding: 15px 70px;
-      text-decoration: none;
-      background-color: #FAFAFA;
-      color: $black;
-      // margin: 0 30px 0 5px;
-      color: #FCAA01;
-      font-weight: bold;
-      border-radius: 50px;
-      border: 0 solid;
-    }
-    .google {
-      padding: 15px 40px;
-      text-decoration: none;
-      background-color: blue;
-      color: $black;
-      // margin: 0 30px 0 5px;
-      color: $white;
-      font-weight: bold;
-      border-radius: 50px;
-      border: 0 solid;
+      margin-right: 24px;
+      .sign_up {
+        @include btn($padding: 12px 70px);
+        background-color: #61C359;
+      }
+      .sign_in {
+        @include btn($padding: 0,$margin: 0 auto,$color:$orange);
+        background-color: #FAFAFA;
+        height: 50px;
+        width: 205px;
+        line-height: 50px;
+      }
+      .google {
+        @include btn($padding: 0,$margin: 20px auto);
+        background-color: blue;
+        height: 50px;
+        width: 205px;
+        line-height: 50px;
+        text-decoration: none;
+        a {
+          color: $white;
+        }
+      }
     }
   }
 }

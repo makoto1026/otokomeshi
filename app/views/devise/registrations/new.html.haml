@@ -16,7 +16,9 @@
       .sign_up-wrapper__right--form
         = f.password_field :password_confirmation, autocomplete: "off", placeholder: " パスワード再入力", class: "form"
       .sign_up-wrapper__right--btn
-        = f.submit "アカウント作成", class: 'sign_up-btn'
-        = render "devise/shared/links"
-        = link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path, method: :post, class: "google"
+        = f.submit "新規登録", class: 'sign_up'
+        .sign_in
+          = render "devise/shared/links"
+        .google
+          = link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path, method: :post
 

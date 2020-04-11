@@ -1,7 +1,5 @@
 .main__destroy {
-  height: calc(100vh - 110px);
-  background-image: image-url('bgi3.png');
-  padding: 60px 250px;
+  @include donePage();
   &--text {
     text-align: center;
     margin-bottom: 60px;

@@ -1,0 +1,13 @@
+@mixin donePage($height: calc(100vh - 110px), $padding: 60px 250px) {
+  height: $height;
+  background-image: image-url('bgi3.png');
+  padding: $padding;
+}
+
+@mixin btn($padding: 15px 70px, $margin: 20px 0, $color: $white, $font-weight: 600, $border-radius: 50px) {
+  padding: $padding;
+  margin:  $margin;
+  color: $color;
+  font-weight: $font-weight;
+  border-radius: $border-radius;
+}
