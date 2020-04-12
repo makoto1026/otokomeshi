@@ -43,22 +43,26 @@ Googleアカウントによる認証機能も設定しています。
 <p>&nbsp</p>
 
 ## マイページ表示
-![1240141cd184f0b666c8dafe1be4f8ae](https://user-images.githubusercontent.com/58877984/79036349-80befb00-7c02-11ea-8369-aed37323cb63.jpg)
-マイページではユーザー情報編集（ユーザーネーム、パスワード）が可能となっており、
-自身が投稿した料理の一覧が表示されます。
+![46fe1ed0e5c4bf6eec6d6d13944bbdb5](https://user-images.githubusercontent.com/58877984/79073914-2ddd6480-7d24-11ea-9b1b-de49af0c33ba.jpg)
+マイページではユーザー情報編集（ユーザーネーム、パスワード）が可能となっており、自身が投稿した料理の一覧が表示されます。
+また、いいねした記事が一覧表示されるページのリンクを設置しています。
 <p>&nbsp</p>
 
 ## 料理一覧、詳細表示、いいね機能
-![e0432cf6a0c31a3102dc6f6166c94407](https://user-images.githubusercontent.com/58877984/79036411-f3c87180-7c02-11ea-986d-69f0deb10c82.jpg)
+![ca6665b71923d57e8a0fb497fcaf4ddb](https://user-images.githubusercontent.com/58877984/79073864-dd660700-7d23-11ea-9fa4-fe3ec9b3bf7e.jpg)
 トップページには全てのユーザーが投稿した記事を一覧で表示しています。
 また、検索フォームによる料理検索や、一覧表示したい記事のカテゴリ選択が可能です。
 <p>&nbsp</p>
 
-![32dc4d5d66ce15be4b6a47c51af517d6](https://user-images.githubusercontent.com/58877984/79036407-ef03bd80-7c02-11ea-89f7-514aadb352d5.jpg)
+
+![773e4fd1d890c2b7c262248b0c4a7d22](https://user-images.githubusercontent.com/58877984/79073890-071f2e00-7d24-11ea-8029-9010f519992b.jpg)
 投稿の詳細画面には上から順に投稿したユーザー名、料理を投稿する際に入力したタイトル、カテゴリ、材料、レシピが表示されます。
-また、「いいね！」機能としてLGTM機能を実装しています。LGTMに関してはpostテーブルと紐付けしたlikesテーブルに存在する投稿のレコードに
-カウントが蓄積されます。
+詳細画面では「いいね」をすることができます。
 <p>&nbsp</p>
+
+![34b0f90db7ff7075fd11da014bfd31b5](https://user-images.githubusercontent.com/58877984/79073913-2d44ce00-7d24-11ea-9dac-8b68038d8de7.jpg)
+詳細画面で「いいね」した投稿を一覧で表示できるように設定しています。LikesテーブルでユーザーIDと投稿IDを管理しており、
+それぞれに紐づく投稿を取得することで、一覧表示を実現させています。
 
 ## カテゴリ別料理一覧検索
 <img width="1440" alt="75fa85d0813db974ad363c6db1bbe707" src="https://user-images.githubusercontent.com/58877984/79036567-45bdc700-7c04-11ea-86ca-6dce933669fc.png">
@@ -72,11 +76,17 @@ Googleアカウントによる認証機能も設定しています。
 <p>&nbsp</p>
 
 ## 料理投稿
-<img width="1440" alt="890c287902d75d41df15679bec3ed3c2" src="https://user-images.githubusercontent.com/58877984/79036609-d1cfee80-7c04-11ea-897b-27764e41ce09.png">
+<img width="1440" alt="bdc6718cc02f7502e83ccce8bbf73653" src="https://user-images.githubusercontent.com/58877984/79073907-274eed00-7d24-11ea-8f5f-111ada223aea.png">
 タイトル、材料、レシピを入力し、カテゴリと画像を選択して投稿します。料理投稿アプリのため、どの項目が一つでも抜けると
 投稿できないようにバリデーションをかけています。
 カテゴリにはgemファイル「ancestry」を導入し、画像もプレビュー表示できるようにJSを仕込んでいます。
 <p>&nbsp</p>
+
+## NGワード
+<img width="1440" alt="782e9382bc253992b63ccabaca1b81fc" src="https://user-images.githubusercontent.com/58877984/79073909-2c13a100-7d24-11ea-8926-74eebfe66536.png">
+「超簡単飯」のコンセプトを大事にしているので、必要最低限以外の調味料は投稿できないよう設定しています。
+NGワードに設定しているキーワードがタイトル、材料、レシピに含まれた場合は投稿が保存されないよう、
+カスタムバリデーションを設定しています。
 
 ## 投稿編集、削除
 ![b248e6466e0463322d1ef832f05d5d31](https://user-images.githubusercontent.com/58877984/79036633-35f2b280-7c05-11ea-93fd-de3997d3bf8c.jpg)
@@ -97,9 +107,9 @@ Googleアカウントによる認証機能も設定しています。
 # 今後のアップデート予定
 今後は以下の点を実装し、より拘りを持ったアプリケーションにしていきたいと考えています。
 <br>
-- 普段あまり使わない調味料は登録できないNGワード機能を設定し、超簡単飯のコンセプトに磨きをかける
-- 自分がいいねした記事を一覧で表示できるようにする
+- NGワードをさらに充実させ、投稿ができなかった場合のエラー画面表示を実装する
 - 複数枚の画像投稿機能を設定し、よりレシピを細かく見られるようにする
+- 投稿詳細画面を充実させ、より見やすいページを実装する
 <p>&nbsp</p>
 
 # 参考 DB設計
@@ -122,7 +132,6 @@ Googleアカウントによる認証機能も設定しています。
 |image|string||
 |material|string||
 |user_id|integer|null: false, foreign_key: true|
-|likes_count|integer||
 |category_id|integer|null: false, foreign_key: true|
 ### Association
 - has_many :likes
