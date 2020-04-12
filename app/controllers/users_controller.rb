@@ -1,12 +1,19 @@
 class UsersController < ApplicationController
 
-  def edit
+
+  def index
     @posts = current_user.posts.order("id DESC")
+  end
+
+  def show
+  end
+
+  def edit
+    @posts = current_user.posts.order("id DESC")    
   end
 
   def update
     if current_user.update(user_params)
-      redirect_to edit_user_path(current_user)
     else
       redirect_to 
     end

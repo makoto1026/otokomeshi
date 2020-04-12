@@ -55,7 +55,11 @@ class PostsController < ApplicationController
     @posts = Post.search(params[:keyword]).order("id DESC")
     @category = Category.where(id:16..56)
   end
-
+  
+  def ngword
+    @ngword = Ngword.all
+  end
+  
   private
 
   def post_params

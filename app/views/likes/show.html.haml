@@ -1,0 +1,24 @@
+.header
+  =render partial: "layouts/header"
+
+.iine
+  .iine__main  
+    %p いいねした記事一覧
+    .iine__main__wrapper
+      - @likes.each do |like|
+        - post = Post.find_by(id: like.post_id)
+        .iine__main__wrapper__lists
+          .iine__main__wrapper__lists--image
+            = link_to image_tag(post.image, class: "img"), post_path(post.id), class: "img"
+          .iine__main__wrapper__lists__textBox
+            .iine__main__wrapper__lists__textBox--text  
+            = post.title
+  .iine__bottom
+    .iine__bottom__left
+      =link_to "マイページへ", edit_user_path(current_user)
+    .iine__bottom__right
+      =link_to "トップページへ", root_path
+    
+
+.footer
+  = render partial: "layouts/footer"

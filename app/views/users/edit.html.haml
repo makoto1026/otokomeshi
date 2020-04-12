@@ -8,8 +8,10 @@
       = f.text_field :name, autofocus: true, placeholder: " ユーザーネーム", class: "mypage__main--left--form"
       = f.email_field :email, placeholder: " メールアドレス", class: "mypage__main--left--form"
       = f.submit "更新", class: 'mypage__main--left--btn'
+    .mupage__main--left__iine
+      =link_to "いいねした記事一覧", post_like_path(current_user), id: "iine"
   .mypage__main--right
-    マイレシピ一覧
+    マイレシピ一覧 ( 投稿数 : #{@posts.count} )
     .mypage__main--right--groups
       -@posts.each do |post| 
         .mypage__main--right--groups--list

@@ -3,7 +3,7 @@
 .post-wrapper
   .post-wrapper__groups
     .post-wrapper__groups--text 投稿フォーム
-    =link_to "NGワード確認!!", root_path, id: "ngword"
+    =link_to "NGワード確認!!", ngword_posts_path, id: "ngword"
     = form_for @post do |f|
       =f.text_field :title, class: "post-wrapper__groups--title", placeholder: " タイトル(10文字以内）　※必須"
       =f.text_area :material, class: "post-wrapper__groups--materials", placeholder: " 材料（カタカナのみ入力可）　※必須 \n 例）ニンジン、タマネギ、ピーマン、タマゴ"

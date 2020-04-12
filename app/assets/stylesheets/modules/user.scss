@@ -1,12 +1,12 @@
 .mypage__main {
-  @include donePage($padding: 60px 250px);
+  @include donePage($padding: 0 150px);
   display: flex;
   &--left {
     width: 40%;
     padding: 60px 40px;
     text-align: center;
     .edit_user {
-      height: 100%;
+      margin-bottom: 60px;
       align-items: center;
     }
     &--form {
@@ -28,7 +28,11 @@
       margin-left: 10px;
       cursor: pointer;
     }
+    #iine {
+      font-size: 20px;
+      font-weight: 600;
 
+    }
   }
   &--right {
     width: 60%;

@@ -63,3 +63,4 @@ gem 'ancestry', '~> 3.0.7'
 gem 'mini_racer', platforms: :ruby
 gem 'omniauth-google-oauth2'
 gem "omniauth-rails_csrf_protection"
+gem 'active_hash'

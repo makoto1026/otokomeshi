@@ -1,11 +1,11 @@
 -if current_user.already_liked?(@post)
   =link_to post_like_path(@post), method: :delete do
-    LGTM
+    いいね
     %i.far.fa-thumbs-up#heart_red
 
 -else
   =link_to post_likes_path(@post), method: :post do
-    LGTM
+    いいね
     %i.far.fa-thumbs-up#heart_nomal
 
 = @post.liked_users.count

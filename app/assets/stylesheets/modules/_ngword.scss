@@ -1,0 +1,32 @@
+.ngword {
+  @include donePage();
+  &__top {
+    text-align: center;
+    margin-bottom: 60px;
+    color: red;
+    font-weight: 600;
+  }
+  &__description  {
+    font-weight: 600;
+    margin-bottom: 60px;
+  }
+  &__textField {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #f8f8f8;
+    border: 1px solid lightgray;
+    padding: 20px;
+    &__text {
+      font-size: 16px;
+      list-style: none;
+      background-color: #fff;
+      margin: 10px 5px;
+      border: 1px #fff solid;
+      padding: 10px 20px;
+      box-shadow: 0 1px 3px 0 rgba(0,0,0,0.16);
+      border-radius: 5px;
+    }
+  }
+
+}

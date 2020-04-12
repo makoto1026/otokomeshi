@@ -1,0 +1,20 @@
+.header
+  =render partial: "layouts/header"
+
+.ngword
+  .ngword__top
+    %p NGワード一覧 ( 50音順 )  
+  .ngword__description
+    %p 当アプリのコンセプトは「最低限の調味料で作ることができる超簡単飯のみ掲載している」ですので、
+    %p タイトル、材料、レシピに以下のワードが含まれる場合は投稿することができません。予めご了承ください。
+  .ngword__textField
+    -@ngword.each do |ngword|
+      .ngword__textField__text
+        =ngword.name
+  .iine__bottom
+    .iine__bottom__left
+      =link_to "投稿へもどる", new_post_path
+    .iine__bottom__right
+      =link_to "トップページへ", root_path
+.footer
+  = render partial: "layouts/footer"

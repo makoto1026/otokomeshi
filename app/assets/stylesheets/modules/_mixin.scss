@@ -1,4 +1,4 @@
-@mixin donePage($height: calc(100vh - 110px), $padding: 60px 250px) {
+@mixin donePage($height: calc(100vh - 110px), $padding: 60px 150px) {
   height: $height;
   background-image: image-url('bgi3.png');
   padding: $padding;

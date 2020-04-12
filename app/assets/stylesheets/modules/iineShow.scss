@@ -1,0 +1,63 @@
+.iine {
+  @include donePage();
+  width: 100vw;
+  &__main {
+    height: 90%;
+    text-align: center;
+    overflow: auto;
+    &__wrapper {
+      padding: 40px 0;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding: 10px 0 0 10px;
+      &__lists {
+        height: 270px;
+        margin: 10px 0;
+        padding: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: left;
+        &:hover {
+          filter: drop-shadow(3px 8px 3px #757575);
+        }
+        .img {
+          border-radius: 10px;
+          height: 230px;
+          width:  200px;
+          object-fit: cover;
+        }
+        &__textBox {
+          &--text {
+            margin-bottom: 5px;
+            font-family: fantasy;
+          }
+        }
+      }
+    }  
+  }
+  &__bottom {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    padding: 0 200px;
+    &__left {
+      @include btn($padding: 15px 40px, $margin: 0);
+      background-color: blue;
+      a {
+        color: $white;
+      }
+    }
+    &__right {
+      @include btn($padding: 15px 40px, $margin: 0);
+      background-color: white;
+      border: 2px solid blue;
+      a {
+        color: blue;
+      }
+    }
+  }
+
+}
