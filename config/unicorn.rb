@@ -1,15 +1,15 @@
 #サーバ上でのアプリケーションコードが設置されているディレクトリを変数に入れておく
-RAILS_ROOT = File.expand_path('../../../', __FILE__)
-ENV['BUNDLE_GEMFILE'] = RAILS_ROOT + "/Gemfile"
+app_path = File.expand_path('../../../', __FILE__)
+
 worker_processes 1
 # currentを指定
-working_directory RAILS_ROOT
+working_directory "#{app_path}/current"
 
 # それぞれ、sharedの中を参照するよう変更
-listen "#{RAILS_ROOT}/shared/tmp/sockets/unicorn.sock"
-pid "#{RAILS_ROOT}/shared/tmp/pids/unicorn.pid"
-stderr_path "#{RAILS_ROOT}/shared/log/unicorn.stderr.log"
-stdout_path "#{RAILS_ROOT}/shared/log/unicorn.stdout.log"
+listen "#{app_path}/shared/tmp/sockets/unicorn.sock"
+pid "#{app_path}/shared/tmp/pids/unicorn.pid"
+stderr_path "#{app_path}/shared/log/unicorn.stderr.log"
+stdout_path "#{app_path}/shared/log/unicorn.stdout.log"
 
 #Railsアプリケーションの応答を待つ上限時間を設定
 timeout 60
