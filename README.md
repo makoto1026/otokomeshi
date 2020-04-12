@@ -63,9 +63,10 @@ Googleアカウントによる認証機能も設定しています。
 ![34b0f90db7ff7075fd11da014bfd31b5](https://user-images.githubusercontent.com/58877984/79073913-2d44ce00-7d24-11ea-9dac-8b68038d8de7.jpg)
 詳細画面で「いいね」した投稿を一覧で表示できるように設定しています。LikesテーブルでユーザーIDと投稿IDを管理しており、
 それぞれに紐づく投稿を取得することで、一覧表示を実現させています。
+<p>&nbsp</p>
 
 ## カテゴリ別料理一覧検索
-<img width="1440" alt="75fa85d0813db974ad363c6db1bbe707" src="https://user-images.githubusercontent.com/58877984/79036567-45bdc700-7c04-11ea-86ca-6dce933669fc.png">
+<img width="1440" alt="61558b1a8354d9fe01da1229c40432b4" src="https://user-images.githubusercontent.com/58877984/79074107-6d588080-7d25-11ea-948a-155aa4267ab4.png">
 トップページにて選択されたカテゴリに属している記事が一覧で表示されます。
 <p>&nbsp</p>
 
