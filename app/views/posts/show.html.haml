@@ -9,9 +9,9 @@
       = render partial: 'likes/like', locals: { post: @post }
     
     .show-main__left__manage
-      -# -if user_signed_in? && current_user.id == @post.user_id 
-      =link_to '編集', edit_post_path(@post.id), method: :get, class: "manage-btn"
-      =link_to '削除', post_path(@post.id), method: :delete, class: "manage-btn"
+      -if user_signed_in? && current_user.id == @post.user_id 
+        =link_to '編集', edit_post_path(@post.id), method: :get, class: "manage-btn"
+        =link_to '削除', post_path(@post.id), method: :delete, class: "manage-btn"
   
   .show-main__right
     .show-main__right--forms
