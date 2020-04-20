@@ -45,7 +45,7 @@ http://18.178.138.85/users/sign_in
 
 ## ユーザー登録（Google認証機能つき）
 <img width="1440" alt="48b91868fb63cedc029b06c622344aef" src="https://user-images.githubusercontent.com/58877984/79039888-68a9a480-7c1f-11ea-8b78-6f383e46689b.png">
-gemファイル「devise」を導入しユーザーネーム、メールアドレス、パスワードにてユーザー登録を実現しています。また、gemファイル「omniauth-google-oauth2」及び「omniauth-rails_csrf_protection」を導入してGoogleアカウントによる認証機能も設定しています。
+gemファイル「devise」を導入しユーザーネーム、メールアドレス、パスワードにてユーザー登録を実現しています。また、gemファイル「omniauth-google-oauth2」及び「omniauth-rails_csrf_protection」を導入してGoogleアカウントによる認証機能も導入しておりますが、現在はローカル環境でのみ使用可能なので、本番環境でも動作するようドメインを取得中です。
 <p>&nbsp</p>
 
 ## メインページ
