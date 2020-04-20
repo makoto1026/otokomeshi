@@ -6,7 +6,7 @@
 <p>&nbsp</p>
 
 ## 本番環境URL
-http://18.178.138.85/users/sign_in
+http://18.178.138.85
 
 ## テストユーザー
 メールアドレス　test@gmail.com<br>パスワード　aaaa1111
