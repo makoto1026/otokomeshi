@@ -11,10 +11,10 @@ class Post < ApplicationRecord
 
   mount_uploader :image, ImagesUploader
 
-  def self.search(search)
-    return Post.all unless search    
-      Post.where('title LIKE(?) OR body LIKE(?) OR material LIKE(?)', "%#{search}%","%#{search}%","%#{search}%")    
-  end
+  # def self.search(search)
+  #   return Post.all unless search    
+  #     Post.where('title LIKE(?) OR body LIKE(?) OR material LIKE(?)', "%#{search}%","%#{search}%","%#{search}%")    
+  # end
 
 end
 

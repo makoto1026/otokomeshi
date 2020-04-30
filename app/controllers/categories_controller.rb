@@ -7,6 +7,8 @@ class CategoriesController < ApplicationController
       @posts = Post.order(created_at: :desc).all
     end
     @category = Category.where(id:16..56)
+    @q = Post.ransack(params[:q])
+    @posts = @q.result(distinct: true).order("id DESC")
   end
 
   private

@@ -1,7 +1,11 @@
 .header
   = render partial: "layouts/header"
 .main
-  = render partial: "layouts/main"
+  .main__left
+    %p#searchText 「#{params[:q].values[0]}」　の検索結果一覧
+    = render partial: "layouts/main_left"
+  = render partial: "layouts/main_right"
+
 .footer
   = render partial: "layouts/footer"
    

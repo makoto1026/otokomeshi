@@ -1,14 +1,9 @@
 class PostsController < ApplicationController
 
   before_action :move_to_index, except: [:index, :show, :search]
+  before_action :search_post,   only:   [:index, :search]
 
   def index
-    if params[:keyword]
-      @posts = Post.where('IKE ?', "%#{params[:keyword]}%")
-    else
-      @posts = Post.all
-    end
-    @posts = Post.order("id DESC")
     @category = Category.where(id:16..56)
   end
 
@@ -52,7 +47,6 @@ class PostsController < ApplicationController
   end
 
   def search
-    @posts = Post.search(params[:keyword]).order("id DESC")
     @category = Category.where(id:16..56)
   end
   
@@ -72,6 +66,11 @@ class PostsController < ApplicationController
 
   def move_to_index
     redirect_to action: :index unless user_signed_in?
+  end
+
+  def search_post
+    @q = Post.ransack(params[:q])
+    @posts = @q.result(distinct: true).order("id DESC")
   end
 
   

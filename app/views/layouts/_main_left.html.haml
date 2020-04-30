@@ -1,0 +1,9 @@
+.main__left--groups
+  -@posts.each do |post| 
+    .main__left--groups--lists
+      .main__left--groups--lists--image
+        = link_to image_tag(post.image, class: "img"), post_path(post.id), class: "img"
+      .main__left--groups--lists--textBox
+      .main__left--groups--lists--textBox--text
+        .main__left--groups--lists--textBox--text  
+          = post.title

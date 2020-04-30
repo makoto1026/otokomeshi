@@ -5,7 +5,7 @@
 @import "modules/mixin";
 @import "modules/header";
 @import "modules/footer";
-@import "modules/index";
+@import "modules/main_left";
 @import "modules/show";
 @import "modules/new";
 @import "modules/user";
@@ -13,7 +13,7 @@
 @import "modules/update";
 @import "modules/destroy";
 @import "modules/create";
-@import "modules/search";
+@import "modules/main_right";
 @import "modules/edit";
 @import "modules/iineShow";
 @import "modules/ngword";
@@ -22,7 +22,6 @@
   box-sizing: border-box;
   font-feature-settings: "palt";
   outline:none;
-
 }
 
 .wrapper {

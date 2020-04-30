@@ -1,0 +1,41 @@
+.main {
+  @include donePage($padding: 0 150px);
+  display: flex;
+  width: 100%; 
+  &__left {
+    width: 60%;
+    padding-top: 20px; 
+    overflow: auto;
+    #searchText {
+      margin-top: 40px;
+    }
+    p {
+      text-align: center;
+    }
+    &--groups {
+      padding: 40px 0;
+      overflow: auto;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding: 10px 0 0 10px;
+      &--lists {
+        height: 270px;
+        margin: 10px 0;
+        padding: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: left;
+        &:hover {
+          filter: drop-shadow(3px 8px 3px #757575);
+        }
+        .img {
+          border-radius: 10px;
+          height: 230px;
+          width:  200px;
+          object-fit: cover;
+        }
+      }
+    } 
+  }
+}
