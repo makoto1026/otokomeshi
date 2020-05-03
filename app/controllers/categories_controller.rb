@@ -1,14 +1,13 @@
 class CategoriesController < ApplicationController
   def show
-    if params[:id]
-      @category = Category.find(params[:id])
-      @posts = @category.posts.order(created_at: :desc).all
-    else
-      @posts = Post.order(created_at: :desc).all
-    end
-    @category = Category.where(id:16..56)
+    @category = Category.find(params[:id])
+    @posts = @category.posts.order(created_at: :desc)
     @q = Post.ransack(params[:q])
-    @posts = @q.result(distinct: true).order("id DESC")
+    @vegetables = Category.where(ancestry:1)
+    @meets = Category.where(ancestry:2)
+    @fishies = Category.where(ancestry:3)
+    @noodles = Category.where(ancestry:4)
+    @riceBowls = Category.where(ancestry:5)
   end
 
   private

@@ -8,6 +8,33 @@
         %i.fas.fa-search
   .main__right__category
     %p#text カテゴリ一覧
-    .main__right__category__groups
-      -@category.each do |category|
-        = link_to category.name, category_path(category.id), class: "main__right__category__groups__name"
+    .main__right__category__box
+      .main__right__category__box__left
+        = image_tag src = "/vegetable.png", width: "70"
+      .main__right__category__box__right
+        -@vegetables.each do |vegetable|
+          = link_to vegetable.name, category_path(vegetable.id), class: "main__right__category__box__right__name"
+    .main__right__category__box
+      .main__right__category__box__left
+        = image_tag src = "/meet.png", width: "70"
+      .main__right__category__box__right
+        -@meets.each do |meet|
+          = link_to meet.name, category_path(meet.id), class: "main__right__category__box__right__name"
+    .main__right__category__box
+      .main__right__category__box__left
+        = image_tag src = "/fish.png", width: "70"
+      .main__right__category__box__right
+        -@fishies.each do |fish|
+          = link_to fish.name, category_path(fish.id), class: "main__right__category__box__right__name"
+    .main__right__category__box
+      .main__right__category__box__left
+        = image_tag src = "/noodle.png", width: "70"
+      .main__right__category__box__right
+        -@noodles.each do |noodle|
+          = link_to noodle.name, category_path(noodle.id), class: "main__right__category__box__right__name"
+    .main__right__category__box
+      .main__right__category__box__left
+        = image_tag src = "/riceBowl.png", width: "70"
+      .main__right__category__box__right
+        -@riceBowls.each do |riceBowl|
+          = link_to riceBowl.name, category_path(riceBowl.id), class: "main__right__category__box__right__riceBowl"

@@ -4,7 +4,6 @@ class PostsController < ApplicationController
   before_action :search_post,   only:   [:index, :search]
 
   def index
-    @category = Category.where(id:16..56)
   end
 
   def create
@@ -32,10 +31,6 @@ class PostsController < ApplicationController
     @category_children = Category.find_by(name: "#{params[:parent_id]}", ancestry: nil).children
   end
 
-  def get_category_grandchildren
-    @category_grandchildren = Category.find("#{params[:child_id]}").children
-  end
-
   def show
     @post = Post.find(params[:id])
     @like = Like.new
@@ -47,7 +42,6 @@ class PostsController < ApplicationController
   end
 
   def search
-    @category = Category.where(id:16..56)
   end
   
   def ngword
@@ -71,6 +65,11 @@ class PostsController < ApplicationController
   def search_post
     @q = Post.ransack(params[:q])
     @posts = @q.result(distinct: true).order("id DESC")
+    @vegetables = Category.where(ancestry:1)
+    @meets = Category.where(ancestry:2)
+    @fishies = Category.where(ancestry:3)
+    @noodles = Category.where(ancestry:4)
+    @riceBowls = Category.where(ancestry:5)
   end
 
   
