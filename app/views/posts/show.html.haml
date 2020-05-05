@@ -3,44 +3,54 @@
 
 .show-main
   .show-main__left
-    .show-main__left--image
+    .show-main__left__image
       = image_tag src= @post.image
-    .show-main__left--iine
+    .show-main__left__iine
       = render partial: 'likes/like', locals: { post: @post }
-    
     .show-main__left__manage
       -if user_signed_in? && current_user.id == @post.user_id 
-        =link_to '編集', edit_post_path(@post.id), method: :get, class: "manage-btn"
-        =link_to '削除', post_path(@post.id), method: :delete, class: "manage-btn"
+        =link_to edit_post_path(@post.id), method: :get do
+          %i.fas.fa-edit#manageBtn
+        =link_to post_path(@post.id), method: :delete do
+          %i.fas.fa-trash-alt#manageBtn
   
   .show-main__right
-    .show-main__right--forms
-      .show-main__right--forms__name
-        .show-main__right--forms__name--title
-          %p投稿者
-        .show-main__right--forms__name--post
-          %p= @post.user.name
-      .show-main__right--forms__title
-        .show-main__right--forms__title--title
-          %pタイトル
-        .show-main__right--forms__title--post        
-          %p= @post.title 
-      .show-main__right--forms__category 
-        .show-main__right--forms__category--title 
-          %pカテゴリ
-        .show-main__right--forms__category--post 
-          %p= @post.category.name
-      .show-main__right--forms__material
-        .show-main__right--forms__material--title
-          %p材料
-        .show-main__right--forms__material--post         
-          %p= @post.material
-      .show-main__right--forms__recipe
-        .show-main__right--forms__recipe--title
-          %pレシピ
-        .show-main__right--forms__recipe--post 
-          %p= @post.body
-
+    .show-main__right__forms
+      .show-main__right__forms__title
+        %p 投稿者
+      .show-main__right__forms__post
+        %p= @post.user.name
+    .show-main__right__forms
+      .show-main__right__forms__title
+        %p タイトル
+      .show-main__right__forms__post
+        %p= @post.title 
+    .show-main__right__forms
+      .show-main__right__forms__title 
+        %p カテゴリ
+      .show-main__right__forms__post 
+        %p= @post.category.name
+    .show-main__right__forms
+      .show-main__right__forms__title
+        %p 材料
+      .show-main__right__forms__post
+        %p= @post.material
+    .show-main__right__recipes
+      .show-main__right__recipes__recipe
+        .show-main__right__recipes__recipe__title
+          %p 手順１
+        .show-main__right__recipes__recipe__post 
+          %p= @post.recipe1
+      .show-main__right__recipes__recipe
+        .show-main__right__recipes__recipe__title
+          %p 手順２
+        .show-main__right__recipes__recipe__post 
+          %p= @post.recipe2
+      .show-main__right__recipes__recipe
+        .show-main__right__recipes__recipe__title
+          %p 手順３
+        .show-main__right__recipes__recipe__post 
+          %p= @post.recipe3
 
 .footer
   = render partial: "layouts/footer"

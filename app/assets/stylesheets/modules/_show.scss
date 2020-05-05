@@ -16,87 +16,59 @@
       position: absolute;
       right: 50px;
     }
-    &--iine {
+    &__iine {
       width: 160px;
-      background-color: white;
       color: #55C500;
       font-weight: 900;
       margin: 0 auto;
-      border: 3px solid #55C500;
       line-height: 40px;
       font-size: 24px;
       color: #55C500;
-      font-family: system-ui;
       position: absolute;
       top: 430px;
-      right: 140px;
+      right: 220px;
     }
     &__manage {
       position: absolute;
-      top: 500px;
-      left: 300px;
-      .manage-btn {
-        color: black;   
-        margin-left: 10px;
+      top: 440px;
+      left: 370px;
+      #manageBtn {
+        font-size: 20px;
+        color: black;
+        margin-left: 20px;
       }
     }
   }
   &__right {
     width: 50%;
+    height: 500px;
     padding: 20px;
+    background-color: rgba(240, 240, 240, 0.4);
     p {
-      margin-bottom: 30px;
       font-size: 16px;
     }
-    &--forms {
-      &__name {
-        height: 50px;
-        display: flex;
-        &--title {
-          width: 30%;
-        }
-        &--post {
-          width: 70%;
-        }
-      }
+    &__forms {
+      height: 50px;
+      display: flex;
+      border-bottom: 1px solid lightgray;
+      align-items: center;
       &__title {
-        height: 50px;
-        display: flex;
-        &--title {
-          width: 30%;
-        }
-        &--post {
-          width: 70%;
-        }
+        width: 30%;
       }
-      &__material {
-        height: 150px;
-        display: flex;
-        &--title {
-          width: 30%;
-        }
-        &--post {
-          width: 70%;
-        }
+      &__post {
+        width: 70%;
       }
+    }
+    &__recipes {
+      height: 300px;
+      display: flex;
+      margin-top: 30px;
       &__recipe {
-        height: 150px;
-        display: flex;
-        &--title {
-          width: 30%;
-        }
-        &--post {
-          width: 70%;
-        }
-      }
-      &__category {
-        height: 50px;
-        display: flex;
-        &--title {
-          width: 30%;
-        }
-        &--post {
-          width: 70%;
+        width: 30%;
+        border-right: 1px solid lightgray;
+        margin-right: 20px;
+        &__title {
+          margin-bottom: 10px;
         }
       }
     }
@@ -125,7 +97,7 @@ a {
         width: 200px;
         object-fit: cover;
       }
-      &--iine {
+      &__iine {
         width: 100px;
         font-size: 15px;
         top: 260px;

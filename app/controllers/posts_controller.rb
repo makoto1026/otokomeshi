@@ -12,6 +12,14 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    child_category = @post.category
+    @category_parent_array = []
+      @array = Category.where(ancestry: nil).pluck(:name)
+      @category_parent_array.push(@array)
+      @category_parent_array.flatten!
+    @category_children_array = Category.where(ancestry: child_category.ancestry) do
+      @category_children_array << children
+    end
   end
 
   def destroy
@@ -51,7 +59,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body, :image, :material, :category_id, :likes_count).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :material, :recipe1, :recipe2, :recipe3, :image,  :category_id, :likes_count).merge(user_id: current_user.id)
   end
 
   def set_post

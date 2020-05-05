@@ -1,17 +1,40 @@
 .header
   = render partial: "layouts/header"
 
-.main__edit
-  .main__edit--forms
+.post-wrapper
+  .post-wrapper__groups
     = form_for @post do |f|
-      = f.text_field :title, placeholder: "タイトル", class: "main__edit--forms--title"
-      = f.text_area :material, placeholder: "材料", class: "main__edit--forms--material"
-      = f.text_area :body, placeholder: "レシピ", class: "main__edit--forms--recipe"
-      = f.submit '更新', class: 'main__edit--forms--submit'
-      = f.label :image, class: "main__edit--forms--inputImage" do
-        = icon('fas', 'camera-retro')
-        = f.file_field :image, class: "post_img"
+      .post-wrapper__groups__left
+        %p タイトル
+        =f.text_field :title, class: "post-wrapper__groups__left--title"
+        %p 材料 
+        =f.text_area :material, class: "post-wrapper__groups__left--materials"
+      .post-wrapper__groups__right
+        .listing-form-box 
+          .listing-product-detail__category
+            %span.listing-default--require 
+            .listing-select-wrapper
+              %p カテゴリ選択 ※必須
+              .listing-select-wrapper__box
+                = f.select :category_id, @category_parent_array, {selected:@post.category.parent.name}, { class: 'listing-select-wrapper__box--select', id: 'parent_category', name: 'post[category_id]'}
+              .listing-select-wrapper__added#children_wrapper
+                .listing-select-wrapper__box
+                  = f.select :category_id, options_for_select(@category_children_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "カテゴリ選択", selected: @post.category.id}),{}, {class: 'get_category_children', id: 'child_category'}
+      .post-wrapper__groups__recipe
+        .post-wrapper__groups__recipe__recipeBox
+          %p 手順１
+          =f.text_area :recipe1, class: "post-wrapper__groups__recipe__recipeBox--recipe"
+        .post-wrapper__groups__recipe__recipeBox
+          %p 手順２
+          =f.text_area :recipe2, class: "post-wrapper__groups__recipe__recipeBox--recipe"
+        .post-wrapper__groups__recipe__recipeBox
+          %p 手順３
+          =f.text_area :recipe3, class: "post-wrapper__groups__recipe__recipeBox--recipe"
 
+        = f.submit '送信', class: 'post-wrapper__groups--submit'
+        = f.label :image, class: "post-wrapper__groups--inputImage" do
+          = icon('fas', 'camera-retro')
+          = f.file_field :image, class: "post_img"
   .main__edit__previews    
     .main__edit__previews__image
     -if @post.image.present?

@@ -2,25 +2,36 @@
   = render partial: "layouts/header"
 .post-wrapper
   .post-wrapper__groups
-    .post-wrapper__groups--text 投稿フォーム
-    =link_to "NGワード確認!!", ngword_posts_path, id: "ngword"
     = form_for @post do |f|
-      =f.text_field :title, class: "post-wrapper__groups--title", placeholder: " タイトル(10文字以内）　※必須"
-      =f.text_area :material, class: "post-wrapper__groups--materials", placeholder: " 材料（カタカナのみ入力可）　※必須 \n 例）ニンジン、タマネギ、ピーマン、タマゴ"
-      =f.text_area :body, class: "post-wrapper__groups--recipe", placeholder: " レシピ　※必須\n 例）\n １、野菜を刻んでフライパンで炒める\n ２、ソースをかけてさらに炒める\n ３、ご飯に盛り付けて完成"
-      = f.submit '送信', class: 'post-wrapper__groups--submit'
-      = f.label :image, class: "post-wrapper__groups--inputImage" do
-        = icon('fas', 'camera-retro')
-        = f.file_field :image, class: "post_img"
-
-      
-      .listing-form-box 
-        .listing-product-detail__category
-          %span.listing-default--require 
-          .listing-select-wrapper
-            .listing-select-wrapper__box
-              = f.select :category_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category', name: 'post[category_id]'}
+      .post-wrapper__groups__left
+        %p タイトル
+        =f.text_field :title, class: "post-wrapper__groups__left--title", placeholder: " 10文字以内"
+        %p 材料 
+        =f.text_area :material, class: "post-wrapper__groups__left--materials", placeholder: " カタカナのみ入力可 例）ニンジン、タマネギ、ピーマン、タマゴ"
+      .post-wrapper__groups__right
+        .listing-form-box 
+          .listing-product-detail__category
+            %span.listing-default--require 
+            .listing-select-wrapper
               %p カテゴリ選択 ※必須
+              .listing-select-wrapper__box
+                = f.select :category_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category', name: 'post[category_id]'}
+
+      .post-wrapper__groups__recipe
+        .post-wrapper__groups__recipe__recipeBox
+          %p 手順１
+          =f.text_area :recipe1, class: "post-wrapper__groups__recipe__recipeBox--recipe", placeholder: " 例）\n １、野菜を刻んでフライパンで炒める"
+        .post-wrapper__groups__recipe__recipeBox
+          %p 手順２
+          =f.text_area :recipe2, class: "post-wrapper__groups__recipe__recipeBox--recipe", placeholder: " 例）\n ２、ソースをかけてさらに炒める"
+        .post-wrapper__groups__recipe__recipeBox
+          %p 手順３
+          =f.text_area :recipe3, class: "post-wrapper__groups__recipe__recipeBox--recipe", placeholder: " 例）\n ３、ご飯に盛り付けて完成"
+
+        = f.submit '送信', class: 'post-wrapper__groups--submit'
+        = f.label :image, class: "post-wrapper__groups--inputImage" do
+          = icon('fas', 'camera-retro')
+          = f.file_field :image, class: "post_img"
 
   .post-wrapper__previews    
     .post-wrapper__previews__image
@@ -28,6 +39,8 @@
       =image_tag @post.image, id: :img_prev
     -else
       =image_tag "no_image.png", id: :img_prev
+    =link_to "コチラで登録NGワードを確認する。", ngword_posts_path, id: "ngword"
+
 
 .footer
   = render partial: "layouts/footer"

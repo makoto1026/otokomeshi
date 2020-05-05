@@ -2,7 +2,7 @@
   .main__right__search
     %p レシピ検索
     = search_form_for @q, url: search_posts_path do |f|
-      = f.search_field :title_or_material_or_category_name_or_body_cont, type: 'text'
+      = f.search_field :title_or_material_or_recipe1_or_recipe2_or_recipe3_or_category_name_cont, type: 'text'
       %label 
         = f.submit '検索', id: "search-btn"
         %i.fas.fa-search

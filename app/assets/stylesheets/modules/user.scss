@@ -54,7 +54,10 @@
           filter: drop-shadow(3px 8px 3px #757575);
         }
         .img {
-          border-radius: 5px;
+          border-radius: 10px;
+          height: 230px;
+          width:  200px;
+          object-fit: cover;
         }
         &--textBox {
           &--text {

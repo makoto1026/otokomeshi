@@ -6,8 +6,11 @@ class Post < ApplicationRecord
   belongs_to :category, foreign_key: 'category_id'
 
   validates :title,    presence: true, ngword: true
-  validates :body,     presence: true, ngword: true
   validates :material, presence: true, ngword: true
+  validates :recipe1,  presence: true, ngword: true
+  validates :recipe2,  presence: true, ngword: true
+  validates :recipe3,  presence: true, ngword: true
+
 
   mount_uploader :image, ImagesUploader
 
