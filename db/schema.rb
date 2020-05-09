@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20200503143140) do
     t.string   "material"
     t.integer  "likes_count"
     t.integer  "category_id"
+    t.string   "category"
     t.string   "recipe2"
     t.string   "recipe3"
     t.index ["user_id"], name: "index_posts_on_user_id", using: :btree
