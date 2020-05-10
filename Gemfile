@@ -65,3 +65,4 @@ gem 'omniauth-google-oauth2'
 gem "omniauth-rails_csrf_protection"
 gem 'active_hash'
 gem 'ransack'
+gem 'fog-aws'
